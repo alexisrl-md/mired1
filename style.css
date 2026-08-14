@@ -453,106 +453,80 @@ body.dark .post-stats {
 
 /* responsive */
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
 
-    .container {
-        grid-template-columns: 200px 1fr;
+    .navbar {
+        height: 60px;
+        padding: 0 10px;
     }
 
+    .logo {
+        font-size: 23px;
+        margin-right: 10px;
+    }
+
+    .search {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .search input {
+        display: none;
+    }
+
+    /* mantenemos los botones */
+    .top-menu {
+        gap: 5px;
+    }
+
+    .top-menu button {
+        display: block;
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .profile-small img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* quitamos solamente el menu lateral */
+    .sidebar {
+        display: none;
+    }
+
+    .container {
+        display: block;
+        padding: 8px;
+    }
+
+    .feed {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* publicaciones */
+    .post {
+        border-radius: 8px;
+        padding: 14px;
+    }
+
+    .create-post {
+        padding: 14px;
+    }
+
+    /* fotos */
+    .photo-grid img {
+        height: 110px;
+    }
+
+    /* contactos ahora aparecen debajo */
     .right-sidebar {
-        display: none;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .navbar {
-        padding: 0 10px;
-    }
-
-    .logo {
-        font-size: 24px;
-    }
-
-    .search {
-        width: 40px;
-        padding: 10px;
-    }
-
-    .search input {
-        display: none;
-    }
-
-    .top-menu button {
-        display: none;
-    }
-
-    .container {
         display: block;
-        padding: 10px;
-    }
-
-    .sidebar {
-        display: none;
-    }
-
-    .feed {
-        max-width: 100%;
-    }
-
-    .post {
-        border-radius: 8px;
-    }
-
-    .photo-grid img {
-        height: 120px;
-    }
-
-}
-@media (max-width: 700px) {
-
-    .navbar {
-        padding: 0 10px;
-    }
-
-    .logo {
-        font-size: 24px;
-    }
-
-    .search {
-        width: 40px;
-        padding: 10px;
-    }
-
-    .search input {
-        display: none;
-    }
-
-    .top-menu button {
-        display: none;
-    }
-
-    .container {
-        display: block;
-        padding: 10px;
-    }
-
-    .sidebar {
-        display: none;
-    }
-
-    .feed {
-        max-width: 100%;
-    }
-
-    .post {
-        border-radius: 8px;
-    }
-
-    .photo-grid img {
-        height: 120px;
+        position: static;
+        margin-top: 15px;
     }
 
 }
