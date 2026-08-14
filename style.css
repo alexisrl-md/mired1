@@ -511,3 +511,48 @@ body.dark .post-stats {
     }
 
 }
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .search {
+        width: 40px;
+        padding: 10px;
+    }
+
+    .search input {
+        display: none;
+    }
+
+    .top-menu button {
+        display: none;
+    }
+
+    .container {
+        display: block;
+        padding: 10px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .feed {
+        max-width: 100%;
+    }
+
+    .post {
+        border-radius: 8px;
+    }
+
+    .photo-grid img {
+        height: 120px;
+    }
+
+}
