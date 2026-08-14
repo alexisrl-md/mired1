@@ -457,42 +457,62 @@ body.dark .post-stats {
 
     .navbar {
         height: 60px;
-        padding: 0 10px;
+        padding: 0 8px;
+        gap: 5px;
     }
 
     .logo {
-        font-size: 23px;
-        margin-right: 10px;
+        font-size: 21px;
+        margin-right: 2px;
+        white-space: nowrap;
     }
 
     .search {
-        width: 40px;
-        height: 40px;
-        padding: 10px;
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        justify-content: center;
+        flex-shrink: 0;
     }
 
     .search input {
         display: none;
     }
 
-    /* mantenemos los botones */
     .top-menu {
-        gap: 5px;
+        margin-left: auto;
+        gap: 3px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
     }
 
     .top-menu button {
-        display: block;
-        width: 35px;
-        height: 35px;
-        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 32px;
+        height: 32px;
+
+        padding: 0;
+        font-size: 14px;
+
+        flex-shrink: 0;
+    }
+
+    .profile-small {
+        flex-shrink: 0;
     }
 
     .profile-small img {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
     }
 
-    /* quitamos solamente el menu lateral */
+
+    /* contenido */
+
     .sidebar {
         display: none;
     }
@@ -507,7 +527,9 @@ body.dark .post-stats {
         max-width: 100%;
     }
 
+
     /* publicaciones */
+
     .post {
         border-radius: 8px;
         padding: 14px;
@@ -517,12 +539,16 @@ body.dark .post-stats {
         padding: 14px;
     }
 
+
     /* fotos */
+
     .photo-grid img {
         height: 110px;
     }
 
-    /* contactos ahora aparecen debajo */
+
+    /* contactos */
+
     .right-sidebar {
         display: block;
         position: static;
