@@ -571,3 +571,187 @@ body.dark .post-header p {
     }
 
 }
+/* =========================
+   COMENTARIOS
+========================= */
+
+.comment-box {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.comment-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: #f0f2f5;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.comment-box button {
+    border: none;
+    background: #1877f2;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.comment-box button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   MODO OSCURO COMPLETO
+========================= */
+
+body.dark {
+    background: #18191a;
+    color: #e4e6eb;
+}
+
+
+/* navbar */
+
+body.dark .navbar {
+    background: #242526;
+    box-shadow: 0 1px 5px #111;
+}
+
+body.dark .search {
+    background: #3a3b3c;
+}
+
+body.dark .search input {
+    color: #e4e6eb;
+}
+
+body.dark .search input::placeholder {
+    color: #b0b3b8;
+}
+
+
+/* botones del navbar */
+
+body.dark .top-menu button {
+    background: #3a3b3c;
+    color: #e4e6eb;
+}
+
+body.dark .top-menu button:hover {
+    background: #4e4f50;
+}
+
+
+/* menu */
+
+body.dark .sidebar,
+body.dark .menu,
+body.dark .user-card {
+    background: #242526;
+}
+
+body.dark .menu a {
+    color: #e4e6eb;
+}
+
+body.dark .menu a:hover {
+    background: #3a3b3c;
+}
+
+
+/* crear publicación */
+
+body.dark .create-post {
+    background: #242526;
+}
+
+body.dark .post-top input {
+    background: #3a3b3c;
+    color: #e4e6eb;
+}
+
+body.dark .post-top input::placeholder {
+    color: #b0b3b8;
+}
+
+body.dark .post-options {
+    border-color: #444;
+}
+
+body.dark .post-options button {
+    color: #e4e6eb;
+}
+
+body.dark .post-options button:hover {
+    background: #3a3b3c;
+}
+
+
+/* publicaciones */
+
+body.dark .post {
+    background: #242526;
+}
+
+body.dark .post-header p {
+    color: #b0b3b8;
+}
+
+body.dark .post-stats {
+    border-color: #444;
+    color: #b0b3b8;
+}
+
+body.dark .post-actions {
+    border-color: #444;
+}
+
+body.dark .post-actions button {
+    color: #e4e6eb;
+}
+
+body.dark .post-actions button:hover {
+    background: #3a3b3c;
+}
+
+
+/* comentarios */
+
+body.dark .comment div {
+    background: #3a3b3c;
+    color: #e4e6eb;
+}
+
+body.dark .comment p {
+    color: #e4e6eb;
+}
+
+
+/* caja para escribir comentario */
+
+body.dark .comment-box input {
+    background: #3a3b3c;
+    color: #e4e6eb;
+}
+
+body.dark .comment-box input::placeholder {
+    color: #b0b3b8;
+}
+
+
+/* contactos */
+
+body.dark .right-sidebar {
+    background: #242526;
+}
+
+body.dark .right-sidebar h3,
+body.dark .right-sidebar strong {
+    color: #e4e6eb;
+}
