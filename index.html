@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodJoob Encuentra empleo remoto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   
+    <header class="navbar">
+
+        <div class="logo">
+        Good<span>Joob</span>
+        </div>
+
+        <div class="search">
+            🔍
+            <input type="text" placeholder="Buscar empleo cerca de mi ciudad">
+        </div>
+
+        <nav class="top-menu">
+            <button>🏠</button>
+            <button>👥</button>
+            <button>💬</button>
+            <button>🔔</button>
+            <button id="darkMode">🌙</button>
+            <div class="profile-small">
+                <img src="src/images/kevin.jpg">
+            </div>
+        </nav>
+
+    </header>
+
+
+  
+    <main class="container">
+
+        
+        <aside class="sidebar">
+
+            <div class="user-card">
+                <img src="src/images/kevin.jpg">
+                <div>
+                    <strong>Kevin Alexis</strong>
+                    <p>@kevin</p>
+                </div>
+            </div>
+
+            <div class="menu">
+
+                <a href="#">🏠 <span>Inicio</span></a>
+                <a href="#">👤 <span>Mi perfil</span></a>
+                <a href="#">👥 <span>Amigos</span></a>
+                <a href="#">💬 <span>Mensajes</span></a>
+                <a href="#">📷 <span>Fotos</span></a>
+                <a href="#">🎬 <span>Videos</span></a>
+                <a href="#">⚙️ <span>Configuración</span></a>
+
+            </div>
+
+        </aside>
+
+
+    
+        <section class="feed">
+
+          
+            <div class="create-post">
+
+                <div class="post-top">
+
+                    <img src="src/images/kevin.jpg">
+
+                    <input
+                        type="text"
+                        id="postInput"
+                        placeholder="¿Qué estás pensando, Kevin?"
+                    >
+
+                </div>
+
+                <div class="post-options">
+
+                    <button>📹 Video</button>
+                    <button>📷 Foto</button>
+                    <button>😊 Sentimiento</button>
+
+                    <button
+                        class="publish"
+                        id="publishButton">
+                        Publicar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+           
+            <article class="post">
+
+                <div class="post-header">
+
+                    <img src="src/images/cristian.jpg">
+
+                    <div>
+                        <strong>Cristian Rojas</strong>
+                        <p>Hace 2 horas · 🌎</p>
+                    </div>
+
+                    <button class="more">•••</button>
+
+                </div>
+
+                <p class="post-text">
+                    Hoy terminé mi proyecto de Healt Manager
+                    Después de muchas horas de código finalmente
+                    funciona. 💻🔥
+                </p>
+
+                <div class="post-image">
+                    <div class="code-image">
+                        &lt;/&gt;
+                    </div>
+                </div>
+
+                <div class="post-stats">
+                    <span>👍 ❤️ 128</span>
+                    <span>32 comentarios</span>
+                </div>
+
+                <div class="post-actions">
+
+                    <button class="like-button">
+                        👍 Me gusta
+                    </button>
+
+                    <button>
+                        💬 Comentar
+                    </button>
+
+                    <button>
+                        ↗️ Compartir
+                    </button>
+
+                </div>
+
+                <div class="comments">
+
+                    <div class="comment">
+                        <img src="src/images/micho.jpg">
+
+                        <div>
+                            <strong>Micho</strong>
+                            <p>
+                                ¡Excelente proyecto botudo! 🔥
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            
+            <article class="post">
+
+                <div class="post-header">
+
+                    <img src="src/images/lesli.jpg">
+
+                    <div>
+                        <strong>Lesli Rojas</strong>
+                        <p>Ayer · 📍 Minillas</p>
+                    </div>
+
+                    <button class="more">•••</button>
+
+                </div>
+
+                <p class="post-text">
+                    Un día increíble de clases con mis alumnos.
+                    ❤️
+                </p>
+
+                <div class="photo-grid">
+
+                    <img src="https://picsum.photos/400/300?random=10">
+                    <img src="https://picsum.photos/400/300?random=11">
+                    <img src="https://picsum.photos/400/300?random=12">
+
+                </div>
+
+                <div class="post-stats">
+                    <span>👍 ❤️ 243</span>
+                    <span>47 comentarios</span>
+                </div>
+
+                <div class="post-actions">
+
+                    <button class="like-button">
+                        👍 Me gusta
+                    </button>
+
+                    <button>
+                        💬 Comentar
+                    </button>
+
+                    <button>
+                        ↗️ Compartir
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+    
+        <aside class="right-sidebar">
+
+            <h3>Contactos</h3>
+
+            <div class="contact">
+                <div class="online">
+                    <img src="src/images/cristian.jpg">
+                    <span></span>
+                </div>
+
+                <strong>Cristian</strong>
+            </div>
+
+            <div class="contact">
+                <div class="online">
+                    <img src="src/images/micho.jpg">
+                    <span></span>
+                </div>
+
+                <strong>Micho</strong>
+            </div>
+
+            <div class="contact">
+                <div class="online">
+                    <img src="src/images/shakira.jpg">
+                    <span></span>
+                </div>
+
+                <strong>Shakira</strong>
+            </div>
+
+            <div class="contact">
+                <div class="online">
+                    <img src="src/images/alison.jpg">
+                    <span></span>
+                </div>
+
+                <strong>Alison</strong>
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <script>
+
+       
+
+        const darkMode = document.getElementById("darkMode");
+
+        darkMode.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark");
+
+        });
+
+
+        
+        const likeButtons = document.querySelectorAll(".like-button");
+
+        likeButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                button.classList.toggle("liked");
+
+                if (button.classList.contains("liked")) {
+
+                    button.innerHTML = "❤️ Me gusta";
+
+                } else {
+
+                    button.innerHTML = "👍 Me gusta";
+
+                }
+
+            });
+
+        });
+
+
+        
+
+        const publishButton =
+            document.getElementById("publishButton");
+
+        const postInput =
+            document.getElementById("postInput");
+
+        const feed =
+            document.querySelector(".feed");
+
+
+        publishButton.addEventListener("click", () => {
+
+            const text = postInput.value.trim();
+
+            if (text === "") {
+
+                alert("Escribe algo antes de publicar.");
+
+                return;
+
+            }
+
+            const newPost = document.createElement("article");
+
+            newPost.className = "post";
+
+            newPost.innerHTML = `
+
+                <div class="post-header">
+
+                    <img src="https://i.pravatar.cc/100?img=12">
+
+                    <div>
+                        <strong>Kevin Alexis</strong>
+                        <p>Ahora · 🌎</p>
+                    </div>
+
+                    <button class="more">•••</button>
+
+                </div>
+
+                <p class="post-text">
+                    ${text}
+                </p>
+
+                <div class="post-stats">
+                    <span>👍 0</span>
+                    <span>0 comentarios</span>
+                </div>
+
+                <div class="post-actions">
+
+                    <button class="like-button">
+                        👍 Me gusta
+                    </button>
+
+                    <button>
+                        💬 Comentar
+                    </button>
+
+                    <button>
+                        ↗️ Compartir
+                    </button>
+
+                </div>
+
+            `;
+
+            feed.insertBefore(
+                newPost,
+                document.querySelector(".create-post").nextElementSibling
+            );
+
+            postInput.value = "";
+
+        });
+
+    </script>
+
+</body>
+</html>
