@@ -1849,3 +1849,576 @@ body.dark .right-sidebar strong {
     background: #f0f2f5;
 
 }
+/* =========================
+   VENTANA DE CHAT
+========================= */
+
+.chat-window {
+
+    position: fixed;
+
+    right: 30px;
+    bottom: 20px;
+
+    width: 350px;
+    height: 500px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    z-index: 9999;
+
+}
+
+
+/* CHAT ABIERTO */
+
+.chat-window.activo {
+
+    display: flex;
+
+}
+
+
+/* =========================
+   CABECERA
+========================= */
+
+.chat-header {
+
+    height: 65px;
+
+    background: #1877f2;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+}
+
+
+.chat-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.chat-header button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.chat-mensajes {
+
+    flex: 1;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    background: #f5f6f7;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.chat-vacio {
+
+    text-align: center;
+
+    color: #777;
+
+    margin: auto;
+
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.mensaje {
+
+    max-width: 75%;
+
+    padding: 8px 12px;
+
+    border-radius: 15px;
+
+    word-wrap: break-word;
+
+}
+
+
+.mensaje p {
+
+    margin: 0;
+
+}
+
+
+.mensaje small {
+
+    display: block;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+    opacity: 0.6;
+
+}
+
+
+/* MENSAJE PROPIO */
+
+.mensaje-propio {
+
+    align-self: flex-end;
+
+    background: #1877f2;
+
+    color: white;
+
+    border-bottom-right-radius: 4px;
+
+}
+
+
+/* MENSAJE DEL OTRO */
+
+.mensaje-otro {
+
+    align-self: flex-start;
+
+    background: white;
+
+    color: #222;
+
+    border-bottom-left-radius: 4px;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.chat-input {
+
+    display: flex;
+
+    padding: 10px;
+
+    gap: 8px;
+
+    background: white;
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+.chat-input input {
+
+    flex: 1;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    padding: 10px 15px;
+
+    outline: none;
+
+}
+
+
+.chat-input input:focus {
+
+    border-color: #1877f2;
+
+}
+
+
+.chat-input button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #1877f2;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
+
+.chat-input button:hover {
+
+    background: #0d65d5;
+
+}
+
+
+/* =========================
+   AVATAR DEL CHAT
+========================= */
+
+.profile-avatar-small {
+
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #1877f2;
+
+    color: white;
+
+    font-weight: bold;
+
+}/* =========================
+   VENTANA DE CHAT
+========================= */
+
+.chat-window {
+
+    position: fixed;
+
+    right: 30px;
+    bottom: 20px;
+
+    width: 350px;
+    height: 500px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    z-index: 9999;
+
+}
+
+
+/* CHAT ABIERTO */
+
+.chat-window.activo {
+
+    display: flex;
+
+}
+
+
+/* =========================
+   CABECERA
+========================= */
+
+.chat-header {
+
+    height: 65px;
+
+    background: #1877f2;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+}
+
+
+.chat-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.chat-header button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.chat-mensajes {
+
+    flex: 1;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    background: #f5f6f7;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.chat-vacio {
+
+    text-align: center;
+
+    color: #777;
+
+    margin: auto;
+
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.mensaje {
+
+    max-width: 75%;
+
+    padding: 8px 12px;
+
+    border-radius: 15px;
+
+    word-wrap: break-word;
+
+}
+
+
+.mensaje p {
+
+    margin: 0;
+
+}
+
+
+.mensaje small {
+
+    display: block;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+    opacity: 0.6;
+
+}
+
+
+/* MENSAJE PROPIO */
+
+.mensaje-propio {
+
+    align-self: flex-end;
+
+    background: #1877f2;
+
+    color: white;
+
+    border-bottom-right-radius: 4px;
+
+}
+
+
+/* MENSAJE DEL OTRO */
+
+.mensaje-otro {
+
+    align-self: flex-start;
+
+    background: white;
+
+    color: #222;
+
+    border-bottom-left-radius: 4px;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.chat-input {
+
+    display: flex;
+
+    padding: 10px;
+
+    gap: 8px;
+
+    background: white;
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+.chat-input input {
+
+    flex: 1;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    padding: 10px 15px;
+
+    outline: none;
+
+}
+
+
+.chat-input input:focus {
+
+    border-color: #1877f2;
+
+}
+
+
+.chat-input button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #1877f2;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
+
+.chat-input button:hover {
+
+    background: #0d65d5;
+
+}
+
+
+/* =========================
+   AVATAR DEL CHAT
+========================= */
+
+.profile-avatar-small {
+
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #1877f2;
+
+    color: white;
+
+    font-weight: bold;
+
+}
