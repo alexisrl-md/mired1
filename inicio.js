@@ -9,10 +9,8 @@ import { createClient } from
 const supabaseUrl =
     "https://pcwcmeahwbozwitqahue.supabase.co";
 
-
 const supabaseKey =
     "sb_publishable_sT_QqB0PnBdFx6iFK2JZiw_LoB68n2Z";
-
 
 const supabase =
     createClient(
@@ -215,7 +213,6 @@ function activarLikes() {
     likeButtons.forEach(
         button => {
 
-
             if (
                 button.dataset.likeActive ===
                 "true"
@@ -279,7 +276,6 @@ function activarComentarios() {
     buttons.forEach(
         button => {
 
-
             if (
                 button.dataset.commentActive ===
                 "true"
@@ -297,7 +293,6 @@ function activarComentarios() {
             button.addEventListener(
                 "click",
                 () => {
-
 
                     const post =
                         button.closest(
@@ -416,7 +411,6 @@ function agregarComentario(
     input
 ) {
 
-
     const texto =
         input.value.trim();
 
@@ -510,11 +504,9 @@ if (
     feed
 ) {
 
-
     publishButton.addEventListener(
         "click",
         () => {
-
 
             const text =
                 postInput.value.trim();
@@ -667,13 +659,14 @@ if (cerrarSesion) {
 
 
             window.location.replace(
-                "inicio.html"
+                "index.html"
             );
 
         }
     );
 
 }
+
 
 /* =========================
    CARGAR CONTACTOS
@@ -695,9 +688,11 @@ async function cargarContactos() {
 
 
     listaContactos.innerHTML = `
+
         <p class="loading-contacts">
             Cargando contactos...
         </p>
+
     `;
 
 
@@ -731,9 +726,11 @@ async function cargarContactos() {
 
 
         listaContactos.innerHTML = `
+
             <p>
                 Error al cargar contactos.
             </p>
+
         `;
 
         return;
@@ -747,9 +744,11 @@ async function cargarContactos() {
     ) {
 
         listaContactos.innerHTML = `
+
             <p>
                 No hay otros usuarios registrados.
             </p>
+
         `;
 
         return;
@@ -780,13 +779,18 @@ async function cargarContactos() {
             let avatar;
 
 
-            if (perfil.foto) {
+            if (
+                perfil.foto &&
+                perfil.foto.trim() !== ""
+            ) {
 
                 avatar = `
+
                     <img
                         src="${perfil.foto}"
                         alt="${perfil.nombre}"
                     >
+
                 `;
 
             } else {
@@ -798,11 +802,13 @@ async function cargarContactos() {
 
 
                 avatar = `
+
                     <div
                         class="profile-avatar profile-avatar-small"
                     >
                         ${letra}
                     </div>
+
                 `;
 
             }
@@ -839,7 +845,7 @@ async function cargarContactos() {
 
 
             /* =========================
-               CLICK
+               CLICK CONTACTO
             ========================= */
 
             contacto.addEventListener(
@@ -863,8 +869,10 @@ async function cargarContactos() {
     );
 
 }
+
+
 /* =========================
-   INICIAR
+   INICIAR FUNCIONES
 ========================= */
 
 activarLikes();
