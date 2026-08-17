@@ -44,7 +44,7 @@ if (!user) {
 
 
 /* =========================
-   DATOS DEL USUARIO
+   USUARIO ACTUAL
 ========================= */
 
 const usuario =
@@ -110,7 +110,7 @@ const feed =
 
 
 /* =========================
-   MOSTRAR NOMBRE
+   MOSTRAR USUARIO
 ========================= */
 
 if (nombreElemento) {
@@ -153,14 +153,14 @@ function ponerAvatar(elemento) {
     }
 
 
-    const primeraLetra =
+    const letra =
         nombreUsuario
             .charAt(0)
             .toUpperCase();
 
 
     elemento.textContent =
-        primeraLetra;
+        letra;
 
 }
 
@@ -204,17 +204,17 @@ if (darkMode) {
 
 function activarLikes() {
 
-    const likeButtons =
+    const botones =
         document.querySelectorAll(
             ".like-button"
         );
 
 
-    likeButtons.forEach(
-        button => {
+    botones.forEach(
+        boton => {
 
             if (
-                button.dataset.likeActive ===
+                boton.dataset.likeActive ===
                 "true"
             ) {
 
@@ -223,31 +223,31 @@ function activarLikes() {
             }
 
 
-            button.dataset.likeActive =
+            boton.dataset.likeActive =
                 "true";
 
 
-            button.addEventListener(
+            boton.addEventListener(
                 "click",
                 () => {
 
-                    button.classList.toggle(
+                    boton.classList.toggle(
                         "liked"
                     );
 
 
                     if (
-                        button.classList.contains(
+                        boton.classList.contains(
                             "liked"
                         )
                     ) {
 
-                        button.innerHTML =
+                        boton.innerHTML =
                             "❤️ Me gusta";
 
                     } else {
 
-                        button.innerHTML =
+                        boton.innerHTML =
                             "👍 Me gusta";
 
                     }
@@ -267,17 +267,17 @@ function activarLikes() {
 
 function activarComentarios() {
 
-    const buttons =
+    const botones =
         document.querySelectorAll(
             ".post-actions button:nth-child(2)"
         );
 
 
-    buttons.forEach(
-        button => {
+    botones.forEach(
+        boton => {
 
             if (
-                button.dataset.commentActive ===
+                boton.dataset.commentActive ===
                 "true"
             ) {
 
@@ -286,16 +286,16 @@ function activarComentarios() {
             }
 
 
-            button.dataset.commentActive =
+            boton.dataset.commentActive =
                 "true";
 
 
-            button.addEventListener(
+            boton.addEventListener(
                 "click",
                 () => {
 
                     const post =
-                        button.closest(
+                        boton.closest(
                             ".post"
                         );
 
@@ -352,7 +352,7 @@ function activarComentarios() {
                         );
 
 
-                    const publish =
+                    const publicar =
                         commentBox.querySelector(
                             "button"
                         );
@@ -361,7 +361,7 @@ function activarComentarios() {
                     input.focus();
 
 
-                    publish.addEventListener(
+                    publicar.addEventListener(
                         "click",
                         () => {
 
@@ -447,17 +447,17 @@ function agregarComentario(
     }
 
 
-    const nuevoComentario =
+    const comentario =
         document.createElement(
             "div"
         );
 
 
-    nuevoComentario.className =
+    comentario.className =
         "comment";
 
 
-    nuevoComentario.innerHTML = `
+    comentario.innerHTML = `
 
         <div
             class="profile-avatar profile-avatar-small"
@@ -483,7 +483,7 @@ function agregarComentario(
 
 
     comments.appendChild(
-        nuevoComentario
+        comentario
     );
 
 
@@ -508,11 +508,11 @@ if (
         "click",
         () => {
 
-            const text =
+            const texto =
                 postInput.value.trim();
 
 
-            if (text === "") {
+            if (texto === "") {
 
                 alert(
                     "Escribe algo antes de publicar."
@@ -523,17 +523,17 @@ if (
             }
 
 
-            const newPost =
+            const nuevaPublicacion =
                 document.createElement(
                     "article"
                 );
 
 
-            newPost.className =
+            nuevaPublicacion.className =
                 "post";
 
 
-            newPost.innerHTML = `
+            nuevaPublicacion.innerHTML = `
 
                 <div class="post-header">
 
@@ -545,17 +545,20 @@ if (
                             .toUpperCase()}
                     </div>
 
+
                     <div>
 
                         <strong>
                             ${nombreUsuario}
                         </strong>
 
+
                         <p>
                             Ahora · 🌎
                         </p>
 
                     </div>
+
 
                     <button class="more">
                         •••
@@ -565,7 +568,7 @@ if (
 
 
                 <p class="post-text">
-                    ${text}
+                    ${texto}
                 </p>
 
 
@@ -588,9 +591,11 @@ if (
                         👍 Me gusta
                     </button>
 
+
                     <button>
                         💬 Comentar
                     </button>
+
 
                     <button>
                         ↗️ Compartir
@@ -601,23 +606,23 @@ if (
             `;
 
 
-            const firstPost =
+            const primeraPublicacion =
                 document.querySelector(
                     ".post"
                 );
 
 
-            if (firstPost) {
+            if (primeraPublicacion) {
 
                 feed.insertBefore(
-                    newPost,
-                    firstPost
+                    nuevaPublicacion,
+                    primeraPublicacion
                 );
 
             } else {
 
                 feed.appendChild(
-                    newPost
+                    nuevaPublicacion
                 );
 
             }
@@ -674,20 +679,20 @@ if (cerrarSesion) {
 
 async function cargarContactos() {
 
-    const listaContactos =
+    const lista =
         document.getElementById(
             "listaContactos"
         );
 
 
-    if (!listaContactos) {
+    if (!lista) {
 
         return;
 
     }
 
 
-    listaContactos.innerHTML = `
+    lista.innerHTML = `
 
         <p class="loading-contacts">
             Cargando contactos...
@@ -725,7 +730,7 @@ async function cargarContactos() {
         );
 
 
-        listaContactos.innerHTML = `
+        lista.innerHTML = `
 
             <p>
                 Error al cargar contactos.
@@ -743,7 +748,7 @@ async function cargarContactos() {
         perfiles.length === 0
     ) {
 
-        listaContactos.innerHTML = `
+        lista.innerHTML = `
 
             <p>
                 No hay otros usuarios registrados.
@@ -756,7 +761,7 @@ async function cargarContactos() {
     }
 
 
-    listaContactos.innerHTML = "";
+    lista.innerHTML = "";
 
 
     perfiles.forEach(
@@ -772,9 +777,11 @@ async function cargarContactos() {
                 "contact";
 
 
-            /* =========================
-               AVATAR
-            ========================= */
+            contacto.style.cursor =
+                "pointer";
+
+
+            /* AVATAR */
 
             let avatar;
 
@@ -814,9 +821,7 @@ async function cargarContactos() {
             }
 
 
-            /* =========================
-               CONTACTO
-            ========================= */
+            /* CONTACTO */
 
             contacto.innerHTML = `
 
@@ -844,16 +849,13 @@ async function cargarContactos() {
             `;
 
 
-            /* =========================
-               CLICK CONTACTO
-            ========================= */
+            /* ABRIR CHAT */
 
             contacto.addEventListener(
                 "click",
                 () => {
 
-                    console.log(
-                        "Contacto seleccionado:",
+                    abrirChat(
                         perfil
                     );
 
@@ -861,7 +863,7 @@ async function cargarContactos() {
             );
 
 
-            listaContactos.appendChild(
+            lista.appendChild(
                 contacto
             );
 
@@ -872,7 +874,562 @@ async function cargarContactos() {
 
 
 /* =========================
-   INICIAR FUNCIONES
+   ELEMENTOS DEL CHAT
+========================= */
+
+const chatWindow =
+    document.getElementById(
+        "chatWindow"
+    );
+
+
+const chatNombre =
+    document.getElementById(
+        "chatNombre"
+    );
+
+
+const chatMensajes =
+    document.getElementById(
+        "chatMensajes"
+    );
+
+
+const mensajeInput =
+    document.getElementById(
+        "mensajeInput"
+    );
+
+
+const enviarMensaje =
+    document.getElementById(
+        "enviarMensaje"
+    );
+
+
+const cerrarChat =
+    document.getElementById(
+        "cerrarChat"
+    );
+
+
+/* =========================
+   CONTACTO ACTUAL
+========================= */
+
+let contactoActual = null;
+
+
+/* =========================
+   ABRIR CHAT
+========================= */
+
+async function abrirChat(
+    contacto
+) {
+
+    contactoActual =
+        contacto;
+
+
+    if (chatWindow) {
+
+        chatWindow.classList.add(
+            "activo"
+        );
+
+    }
+
+
+    if (chatNombre) {
+
+        chatNombre.textContent =
+            contacto.nombre;
+
+    }
+
+
+    if (mensajeInput) {
+
+        mensajeInput.value = "";
+
+        mensajeInput.focus();
+
+    }
+
+
+    await cargarMensajes();
+
+}
+
+
+/* =========================
+   CERRAR CHAT
+========================= */
+
+if (cerrarChat) {
+
+    cerrarChat.addEventListener(
+        "click",
+        () => {
+
+            contactoActual =
+                null;
+
+
+            chatWindow.classList.remove(
+                "activo"
+            );
+
+
+            if (chatMensajes) {
+
+                chatMensajes.innerHTML = `
+
+                    <p class="chat-vacio">
+                        Selecciona un contacto para comenzar.
+                    </p>
+
+                `;
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================
+   CARGAR MENSAJES
+========================= */
+
+async function cargarMensajes() {
+
+    if (
+        !contactoActual ||
+        !chatMensajes
+    ) {
+
+        return;
+
+    }
+
+
+    chatMensajes.innerHTML = `
+
+        <p class="chat-vacio">
+            Cargando mensajes...
+        </p>
+
+    `;
+
+
+    const {
+        data: mensajes,
+        error
+    } =
+        await supabase
+            .from("mensajes")
+            .select(
+                "id, remitente, destinatario, mensaje, creado_en"
+            )
+            .or(
+                `and(remitente.eq.${usuario.id},destinatario.eq.${contactoActual.id}),and(remitente.eq.${contactoActual.id},destinatario.eq.${usuario.id})`
+            )
+            .order(
+                "creado_en",
+                {
+                    ascending: true
+                }
+            );
+
+
+    if (error) {
+
+        console.error(
+            "Error cargando mensajes:",
+            error
+        );
+
+
+        chatMensajes.innerHTML = `
+
+            <p class="chat-vacio">
+                No se pudieron cargar los mensajes.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    chatMensajes.innerHTML = "";
+
+
+    if (
+        !mensajes ||
+        mensajes.length === 0
+    ) {
+
+        chatMensajes.innerHTML = `
+
+            <p class="chat-vacio">
+                No hay mensajes todavía.
+                ¡Envía el primero!
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    mensajes.forEach(
+        mensaje => {
+
+            mostrarMensaje(
+                mensaje
+            );
+
+        }
+    );
+
+
+    bajarChat();
+
+}
+
+
+/* =========================
+   MOSTRAR MENSAJE
+========================= */
+
+function mostrarMensaje(
+    mensaje
+) {
+
+    if (!chatMensajes) {
+
+        return;
+
+    }
+
+
+    const elemento =
+        document.createElement(
+            "div"
+        );
+
+
+    elemento.className =
+        "mensaje";
+
+
+    if (
+        mensaje.remitente ===
+        usuario.id
+    ) {
+
+        elemento.classList.add(
+            "mensaje-propio"
+        );
+
+    } else {
+
+        elemento.classList.add(
+            "mensaje-otro"
+        );
+
+    }
+
+
+    elemento.innerHTML = `
+
+        <p>
+            ${escapeHtml(
+                mensaje.mensaje
+            )}
+        </p>
+
+        <small>
+            ${formatearHora(
+                mensaje.creado_en
+            )}
+        </small>
+
+    `;
+
+
+    chatMensajes.appendChild(
+        elemento
+    );
+
+}
+
+
+/* =========================
+   ESCAPAR HTML
+========================= */
+
+function escapeHtml(
+    texto
+) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        texto;
+
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================
+   FORMATEAR HORA
+========================= */
+
+function formatearHora(
+    fecha
+) {
+
+    if (!fecha) {
+
+        return "";
+
+    }
+
+
+    return new Date(
+        fecha
+    ).toLocaleTimeString(
+        "es-MX",
+        {
+            hour: "2-digit",
+            minute: "2-digit"
+        }
+    );
+
+}
+
+
+/* =========================
+   BAJAR CHAT
+========================= */
+
+function bajarChat() {
+
+    if (!chatMensajes) {
+
+        return;
+
+    }
+
+
+    chatMensajes.scrollTop =
+        chatMensajes.scrollHeight;
+
+}
+
+
+/* =========================
+   ENVIAR MENSAJE
+========================= */
+
+async function enviarMensajeChat() {
+
+    if (
+        !contactoActual ||
+        !mensajeInput
+    ) {
+
+        return;
+
+    }
+
+
+    const texto =
+        mensajeInput.value.trim();
+
+
+    if (texto === "") {
+
+        return;
+
+    }
+
+
+    enviarMensaje.disabled =
+        true;
+
+
+    const {
+        error
+    } =
+        await supabase
+            .from("mensajes")
+            .insert({
+
+                remitente:
+                    usuario.id,
+
+                destinatario:
+                    contactoActual.id,
+
+                mensaje:
+                    texto
+
+            });
+
+
+    enviarMensaje.disabled =
+        false;
+
+
+    if (error) {
+
+        console.error(
+            "Error enviando mensaje:",
+            error
+        );
+
+
+        alert(
+            "No se pudo enviar el mensaje."
+        );
+
+        return;
+
+    }
+
+
+    mensajeInput.value = "";
+
+    mensajeInput.focus();
+
+}
+
+
+/* =========================
+   BOTON ENVIAR
+========================= */
+
+if (enviarMensaje) {
+
+    enviarMensaje.addEventListener(
+        "click",
+        enviarMensajeChat
+    );
+
+}
+
+
+/* =========================
+   ENTER PARA ENVIAR
+========================= */
+
+if (mensajeInput) {
+
+    mensajeInput.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key ===
+                "Enter"
+            ) {
+
+                event.preventDefault();
+
+                enviarMensajeChat();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================
+   MENSAJES EN TIEMPO REAL
+========================= */
+
+const canalMensajes =
+    supabase
+        .channel(
+            "mensajes-tiempo-real"
+        )
+        .on(
+            "postgres_changes",
+            {
+                event: "INSERT",
+                schema: "public",
+                table: "mensajes"
+            },
+            payload => {
+
+                const nuevoMensaje =
+                    payload.new;
+
+
+                if (
+                    !contactoActual
+                ) {
+
+                    return;
+
+                }
+
+
+                const esConversacion =
+                    (
+                        nuevoMensaje.remitente ===
+                        usuario.id &&
+                        nuevoMensaje.destinatario ===
+                        contactoActual.id
+                    )
+                    ||
+                    (
+                        nuevoMensaje.remitente ===
+                        contactoActual.id &&
+                        nuevoMensaje.destinatario ===
+                        usuario.id
+                    );
+
+
+                if (
+                    !esConversacion
+                ) {
+
+                    return;
+
+                }
+
+
+                mostrarMensaje(
+                    nuevoMensaje
+                );
+
+
+                bajarChat();
+
+            }
+        )
+        .subscribe();
+
+
+/* =========================
+   INICIAR
 ========================= */
 
 activarLikes();
