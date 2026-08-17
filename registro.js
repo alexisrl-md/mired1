@@ -7,7 +7,7 @@ const supabaseUrl =
 
 
 const supabaseKey =
-    "sb_secret_iu62jA9WNvX9oHe9vxZ82Q_9SSwukyW";
+    "sb_publishable_sT_QqB0PnBdFx6iFK2JZiw_LoB68n2Z";
 
 
 const supabase =
