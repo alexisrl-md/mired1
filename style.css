@@ -755,3 +755,164 @@ body.dark .right-sidebar h3,
 body.dark .right-sidebar strong {
     color: #e4e6eb;
 }
+/* =========================
+   CHAT
+========================= */
+
+.chat-window {
+    position: fixed;
+    right: 25px;
+    bottom: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.chat-window.activo {
+    display: flex;
+}
+
+
+/* HEADER */
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #1877f2;
+    color: white;
+}
+
+.chat-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header strong {
+    font-size: 16px;
+}
+
+.chat-header small {
+    opacity: 0.8;
+    margin-top: 3px;
+}
+
+.chat-header button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* MENSAJES */
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #f5f6f7;
+}
+
+.chat-vacio {
+    text-align: center;
+    color: #777;
+    margin: auto;
+}
+
+
+/* MENSAJE */
+
+.mensaje {
+    max-width: 75%;
+    padding: 9px 12px;
+    border-radius: 15px;
+    word-wrap: break-word;
+}
+
+.mensaje p {
+    margin: 0;
+}
+
+.mensaje small {
+    display: block;
+    font-size: 10px;
+    margin-top: 4px;
+    opacity: 0.6;
+}
+
+
+/* MIS MENSAJES */
+
+.mensaje-propio {
+    align-self: flex-end;
+    background: #1877f2;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+
+/* MENSAJES DEL OTRO */
+
+.mensaje-otro {
+    align-self: flex-start;
+    background: white;
+    color: #222;
+    border-bottom-left-radius: 4px;
+}
+
+
+/* INPUT */
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ddd;
+    gap: 8px;
+}
+
+.chat-input input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 14px;
+    outline: none;
+}
+
+.chat-input button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #1877f2;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.chat-input button:hover {
+    opacity: 0.85;
+}
+
+
+/* CONTACTOS */
+
+.contact {
+    cursor: pointer;
+}
+
+.contact:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
