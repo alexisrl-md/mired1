@@ -961,22 +961,38 @@ let contactoActual =
 /* =========================
    ABRIR CHAT
 ========================= */
+async function abrirChat(contacto) {
 
-async function abrirChat(
-    contacto
-) {
+    console.log(
+        "ABRIENDO CHAT:",
+        contacto
+    );
+
 
     contactoActual =
         contacto;
 
 
-    if (chatWindow) {
+    if (!chatWindow) {
 
-        chatWindow.classList.add(
-            "activo"
+        console.error(
+            "No existe #chatWindow en el HTML"
         );
 
+        return;
+
     }
+
+
+    chatWindow.classList.add(
+        "activo"
+    );
+
+
+    console.log(
+        "Clase actual:",
+        chatWindow.className
+    );
 
 
     if (chatNombre) {
@@ -989,10 +1005,26 @@ async function abrirChat(
 
     if (chatAvatar) {
 
-        chatAvatar.textContent =
-            contacto.nombre
-                .charAt(0)
-                .toUpperCase();
+        if (
+            contacto.foto &&
+            contacto.foto.trim() !== ""
+        ) {
+
+            chatAvatar.innerHTML = `
+                <img
+                    src="${contacto.foto}"
+                    alt="${contacto.nombre}"
+                >
+            `;
+
+        } else {
+
+            chatAvatar.textContent =
+                contacto.nombre
+                    .charAt(0)
+                    .toUpperCase();
+
+        }
 
     }
 
