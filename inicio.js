@@ -675,7 +675,194 @@ if (cerrarSesion) {
 
 }
 
+/* =========================
+   CARGAR CONTACTOS
+========================= */
 
+async function cargarContactos() {
+
+    const listaContactos =
+        document.getElementById(
+            "listaContactos"
+        );
+
+
+    if (!listaContactos) {
+
+        return;
+
+    }
+
+
+    listaContactos.innerHTML = `
+        <p class="loading-contacts">
+            Cargando contactos...
+        </p>
+    `;
+
+
+    const {
+        data: perfiles,
+        error
+    } =
+        await supabase
+            .from("perfiles")
+            .select(
+                "id, nombre, username, foto"
+            )
+            .neq(
+                "id",
+                usuario.id
+            )
+            .order(
+                "nombre",
+                {
+                    ascending: true
+                }
+            );
+
+
+    if (error) {
+
+        console.error(
+            "Error cargando contactos:",
+            error
+        );
+
+
+        listaContactos.innerHTML = `
+            <p>
+                Error al cargar contactos.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    if (
+        !perfiles ||
+        perfiles.length === 0
+    ) {
+
+        listaContactos.innerHTML = `
+            <p>
+                No hay otros usuarios registrados.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    listaContactos.innerHTML = "";
+
+
+    perfiles.forEach(
+        perfil => {
+
+            const contacto =
+                document.createElement(
+                    "div"
+                );
+
+
+            contacto.className =
+                "contact";
+
+
+            /* =========================
+               AVATAR
+            ========================= */
+
+            let avatar;
+
+
+            if (perfil.foto) {
+
+                avatar = `
+                    <img
+                        src="${perfil.foto}"
+                        alt="${perfil.nombre}"
+                    >
+                `;
+
+            } else {
+
+                const letra =
+                    perfil.nombre
+                        .charAt(0)
+                        .toUpperCase();
+
+
+                avatar = `
+                    <div
+                        class="profile-avatar profile-avatar-small"
+                    >
+                        ${letra}
+                    </div>
+                `;
+
+            }
+
+
+            /* =========================
+               CONTACTO
+            ========================= */
+
+            contacto.innerHTML = `
+
+                <div class="online">
+
+                    ${avatar}
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="contact-info">
+
+                    <strong>
+                        ${perfil.nombre}
+                    </strong>
+
+                    <small>
+                        @${perfil.username}
+                    </small>
+
+                </div>
+
+            `;
+
+
+            /* =========================
+               CLICK
+            ========================= */
+
+            contacto.addEventListener(
+                "click",
+                () => {
+
+                    console.log(
+                        "Contacto seleccionado:",
+                        perfil
+                    );
+
+                }
+            );
+
+
+            listaContactos.appendChild(
+                contacto
+            );
+
+        }
+    );
+
+}
 /* =========================
    INICIAR
 ========================= */
@@ -683,3 +870,5 @@ if (cerrarSesion) {
 activarLikes();
 
 activarComentarios();
+
+cargarContactos();
