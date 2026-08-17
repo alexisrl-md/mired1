@@ -49,30 +49,37 @@
                 🏠
             </button>
 
+
             <button>
                 👥
             </button>
+
 
             <button>
                 💬
             </button>
 
+
             <button>
                 🔔
             </button>
+
 
             <button id="darkMode">
                 🌙
             </button>
 
 
+            <!-- FOTO DEL USUARIO ACTUAL -->
+
             <div class="profile-small">
 
-                <img
+                <div
                     id="fotoUsuarioSuperior"
-                    src="src/images/kevin.jpg"
-                    alt="foto de perfil"
+                    class="profile-avatar"
                 >
+                    U
+                </div>
 
             </div>
 
@@ -96,13 +103,17 @@
         <aside class="sidebar">
 
 
+            <!-- USUARIO ACTUAL -->
+
             <div class="user-card">
 
-                <img
+
+                <div
                     id="fotoUsuario"
-                    src="src/images/kevin.jpg"
-                    alt="foto de perfil"
+                    class="profile-avatar profile-avatar-large"
                 >
+                    U
+                </div>
 
 
                 <div>
@@ -122,47 +133,64 @@
 
 
 
+            <!-- MENU -->
+
             <div class="menu">
+
 
                 <a href="#">
                     🏠
-                    <span>Inicio</span>
+                    <span>
+                        Inicio
+                    </span>
                 </a>
 
 
                 <a href="#">
                     👤
-                    <span>Mi perfil</span>
+                    <span>
+                        Mi perfil
+                    </span>
                 </a>
 
 
                 <a href="#">
                     👥
-                    <span>Amigos</span>
+                    <span>
+                        Amigos
+                    </span>
                 </a>
 
 
                 <a href="#">
                     💬
-                    <span>Mensajes</span>
+                    <span>
+                        Mensajes
+                    </span>
                 </a>
 
 
                 <a href="#">
                     📷
-                    <span>Fotos</span>
+                    <span>
+                        Fotos
+                    </span>
                 </a>
 
 
                 <a href="#">
                     🎬
-                    <span>Videos</span>
+                    <span>
+                        Videos
+                    </span>
                 </a>
 
 
                 <a href="#">
                     ⚙️
-                    <span>Configuración</span>
+                    <span>
+                        Configuración
+                    </span>
                 </a>
 
 
@@ -171,7 +199,9 @@
                     id="cerrarSesion"
                 >
                     🚪
-                    <span>Cerrar sesión</span>
+                    <span>
+                        Cerrar sesión
+                    </span>
                 </a>
 
             </div>
@@ -187,18 +217,24 @@
         <section class="feed">
 
 
-            <!-- CREAR PUBLICACION -->
+            <!-- =========================
+                 CREAR PUBLICACION
+            ========================= -->
 
             <div class="create-post">
 
 
                 <div class="post-top">
 
-                    <img
+
+                    <!-- FOTO DEL USUARIO -->
+
+                    <div
                         id="fotoUsuarioPublicacion"
-                        src="src/images/kevin.jpg"
-                        alt="foto de perfil"
+                        class="profile-avatar"
                     >
+                        U
+                    </div>
 
 
                     <input
@@ -212,6 +248,7 @@
 
 
                 <div class="post-options">
+
 
                     <button>
                         📹 Video
@@ -235,6 +272,7 @@
                         Publicar
                     </button>
 
+
                 </div>
 
             </div>
@@ -242,7 +280,7 @@
 
 
             <!-- =========================
-                 PUBLICACION CRISTIAN
+                 PUBLICACION DE EJEMPLO
             ========================= -->
 
             <article class="post">
@@ -250,10 +288,12 @@
 
                 <div class="post-header">
 
-                    <img
-                        src="src/images/cristian.jpg"
-                        alt="Cristian"
+
+                    <div
+                        class="profile-avatar"
                     >
+                        C
+                    </div>
 
 
                     <div>
@@ -280,9 +320,10 @@
 
                 <p class="post-text">
 
-                    Hoy terminé mi proyecto de Healt Manager.
-                    Después de muchas horas de código finalmente
-                    funciona. 💻🔥
+                    Hoy terminé mi proyecto de
+                    Healt Manager. Después de
+                    muchas horas de código
+                    finalmente funciona. 💻🔥
 
                 </p>
 
@@ -291,7 +332,9 @@
                 <div class="post-image">
 
                     <div class="code-image">
+
                         &lt;/&gt;
+
                     </div>
 
                 </div>
@@ -299,6 +342,7 @@
 
 
                 <div class="post-stats">
+
 
                     <span>
                         👍 ❤️ 128
@@ -309,11 +353,13 @@
                         32 comentarios
                     </span>
 
+
                 </div>
 
 
 
                 <div class="post-actions">
+
 
                     <button class="like-button">
                         👍 Me gusta
@@ -329,6 +375,7 @@
                         ↗️ Compartir
                     </button>
 
+
                 </div>
 
 
@@ -338,13 +385,16 @@
 
                     <div class="comment">
 
-                        <img
-                            src="src/images/micho.jpg"
-                            alt="Micho"
+
+                        <div
+                            class="profile-avatar profile-avatar-small"
                         >
+                            M
+                        </div>
 
 
                         <div>
+
 
                             <strong>
                                 Micho
@@ -355,18 +405,22 @@
                                 ¡Excelente proyecto botudo! 🔥
                             </p>
 
+
                         </div>
+
 
                     </div>
 
+
                 </div>
+
 
             </article>
 
 
 
             <!-- =========================
-                 PUBLICACION LESLI
+                 PUBLICACION DE EJEMPLO
             ========================= -->
 
             <article class="post">
@@ -374,10 +428,12 @@
 
                 <div class="post-header">
 
-                    <img
-                        src="src/images/lesli.jpg"
-                        alt="Lesli"
+
+                    <div
+                        class="profile-avatar"
                     >
+                        L
+                    </div>
 
 
                     <div>
@@ -404,14 +460,15 @@
 
                 <p class="post-text">
 
-                    Un día increíble de clases con mis alumnos.
-                    ❤️
+                    Un día increíble de clases
+                    con mis alumnos. ❤️
 
                 </p>
 
 
 
                 <div class="photo-grid">
+
 
                     <img
                         src="https://picsum.photos/400/300?random=10"
@@ -430,11 +487,13 @@
                         alt="foto"
                     >
 
+
                 </div>
 
 
 
                 <div class="post-stats">
+
 
                     <span>
                         👍 ❤️ 243
@@ -445,11 +504,13 @@
                         47 comentarios
                     </span>
 
+
                 </div>
 
 
 
                 <div class="post-actions">
+
 
                     <button class="like-button">
                         👍 Me gusta
@@ -465,9 +526,12 @@
                         ↗️ Compartir
                     </button>
 
+
                 </div>
 
+
             </article>
+
 
         </section>
 
@@ -485,95 +549,26 @@
             </h3>
 
 
+            <!--
+                AQUI JAVASCRIPT CARGARA
+                AUTOMATICAMENTE LOS USUARIOS
+                REGISTRADOS EN SUPABASE
+            -->
 
-            <div class="contact">
+            <div
+                id="listaContactos"
+                class="contacts-list"
+            >
 
-                <div class="online">
-
-                    <img
-                        src="src/images/cristian.jpg"
-                        alt="Cristian"
-                    >
-
-                    <span></span>
-
-                </div>
-
-
-                <strong>
-                    Cristian
-                </strong>
-
-            </div>
-
-
-
-            <div class="contact">
-
-                <div class="online">
-
-                    <img
-                        src="src/images/micho.jpg"
-                        alt="Micho"
-                    >
-
-                    <span></span>
-
-                </div>
-
-
-                <strong>
-                    Micho
-                </strong>
-
-            </div>
-
-
-
-            <div class="contact">
-
-                <div class="online">
-
-                    <img
-                        src="src/images/shakira.jpg"
-                        alt="Shakira"
-                    >
-
-                    <span></span>
-
-                </div>
-
-
-                <strong>
-                    Shakira
-                </strong>
-
-            </div>
-
-
-
-            <div class="contact">
-
-                <div class="online">
-
-                    <img
-                        src="src/images/alison.jpg"
-                        alt="Alison"
-                    >
-
-                    <span></span>
-
-                </div>
-
-
-                <strong>
-                    Alison
-                </strong>
+                <p class="loading-contacts">
+                    Cargando contactos...
+                </p>
 
             </div>
 
 
         </aside>
+
 
     </main>
 
