@@ -1,96 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoodJoob Encuentra empleo remoto</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GoodJoob - Encuentra empleo remoto</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-   
+
+    <!-- =========================
+         BARRA SUPERIOR
+    ========================= -->
+
     <header class="navbar">
 
         <div class="logo">
-        Good<span>Joob</span>
+            Good<span>Joob</span>
         </div>
+
 
         <div class="search">
+
             🔍
-            <input type="text" placeholder="Buscar empleo cerca de mi ciudad">
+
+            <input
+                type="text"
+                placeholder="Buscar empleo cerca de mi ciudad"
+            >
+
         </div>
 
+
         <nav class="top-menu">
-            <button>🏠</button>
-            <button>👥</button>
-            <button>💬</button>
-            <button>🔔</button>
-            <button id="darkMode">🌙</button>
+
+            <button>
+                🏠
+            </button>
+
+            <button>
+                👥
+            </button>
+
+            <button>
+                💬
+            </button>
+
+            <button>
+                🔔
+            </button>
+
+            <button id="darkMode">
+                🌙
+            </button>
+
+
             <div class="profile-small">
-                <img src="src/images/kevin.jpg">
+
+                <img
+                    id="fotoUsuarioSuperior"
+                    src="src/images/kevin.jpg"
+                    alt="foto de perfil"
+                >
+
             </div>
+
         </nav>
 
     </header>
 
 
-  
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================= -->
+
     <main class="container">
 
-        
+
+        <!-- =========================
+             MENU LATERAL
+        ========================= -->
+
         <aside class="sidebar">
 
+
             <div class="user-card">
-                <img src="src/images/kevin.jpg">
+
+                <img
+                    id="fotoUsuario"
+                    src="src/images/kevin.jpg"
+                    alt="foto de perfil"
+                >
+
+
                 <div>
-                    <strong>Kevin Alexis</strong>
-                    <p>@kevin</p>
+
+                    <strong id="nombreUsuario">
+                        Usuario
+                    </strong>
+
+
+                    <p id="usuarioNombre">
+                        @usuario
+                    </p>
+
                 </div>
+
             </div>
+
+
 
             <div class="menu">
 
-                <a href="#">🏠 <span>Inicio</span></a>
-                <a href="#">👤 <span>Mi perfil</span></a>
-                <a href="#">👥 <span>Amigos</span></a>
-                <a href="#">💬 <span>Mensajes</span></a>
-                <a href="#">📷 <span>Fotos</span></a>
-                <a href="#">🎬 <span>Videos</span></a>
-                <a href="#">⚙️ <span>Configuración</span></a>
+                <a href="#">
+                    🏠
+                    <span>Inicio</span>
+                </a>
+
+
+                <a href="#">
+                    👤
+                    <span>Mi perfil</span>
+                </a>
+
+
+                <a href="#">
+                    👥
+                    <span>Amigos</span>
+                </a>
+
+
+                <a href="#">
+                    💬
+                    <span>Mensajes</span>
+                </a>
+
+
+                <a href="#">
+                    📷
+                    <span>Fotos</span>
+                </a>
+
+
+                <a href="#">
+                    🎬
+                    <span>Videos</span>
+                </a>
+
+
+                <a href="#">
+                    ⚙️
+                    <span>Configuración</span>
+                </a>
+
+
+                <a
+                    href="#"
+                    id="cerrarSesion"
+                >
+                    🚪
+                    <span>Cerrar sesión</span>
+                </a>
 
             </div>
 
         </aside>
 
 
-    
+
+        <!-- =========================
+             FEED
+        ========================= -->
+
         <section class="feed">
 
-          
+
+            <!-- CREAR PUBLICACION -->
+
             <div class="create-post">
+
 
                 <div class="post-top">
 
-                    <img src="src/images/kevin.jpg">
+                    <img
+                        id="fotoUsuarioPublicacion"
+                        src="src/images/kevin.jpg"
+                        alt="foto de perfil"
+                    >
+
 
                     <input
                         type="text"
                         id="postInput"
-                        placeholder="¿Qué estás pensando, Kevin?"
+                        placeholder="¿Qué estás pensando?"
                     >
 
                 </div>
 
+
+
                 <div class="post-options">
 
-                    <button>📹 Video</button>
-                    <button>📷 Foto</button>
-                    <button>😊 Sentimiento</button>
+                    <button>
+                        📹 Video
+                    </button>
+
+
+                    <button>
+                        📷 Foto
+                    </button>
+
+
+                    <button>
+                        😊 Sentimiento
+                    </button>
+
 
                     <button
                         class="publish"
-                        id="publishButton">
+                        id="publishButton"
+                    >
                         Publicar
                     </button>
 
@@ -99,38 +240,78 @@
             </div>
 
 
-           
+
+            <!-- =========================
+                 PUBLICACION CRISTIAN
+            ========================= -->
+
             <article class="post">
+
 
                 <div class="post-header">
 
-                    <img src="src/images/cristian.jpg">
+                    <img
+                        src="src/images/cristian.jpg"
+                        alt="Cristian"
+                    >
+
 
                     <div>
-                        <strong>Cristian Rojas</strong>
-                        <p>Hace 2 horas · 🌎</p>
+
+                        <strong>
+                            Cristian Rojas
+                        </strong>
+
+
+                        <p>
+                            Hace 2 horas · 🌎
+                        </p>
+
                     </div>
 
-                    <button class="more">•••</button>
+
+                    <button class="more">
+                        •••
+                    </button>
 
                 </div>
 
+
+
                 <p class="post-text">
-                    Hoy terminé mi proyecto de Healt Manager
+
+                    Hoy terminé mi proyecto de Healt Manager.
                     Después de muchas horas de código finalmente
                     funciona. 💻🔥
+
                 </p>
 
+
+
                 <div class="post-image">
+
                     <div class="code-image">
                         &lt;/&gt;
                     </div>
+
                 </div>
 
+
+
                 <div class="post-stats">
-                    <span>👍 ❤️ 128</span>
-                    <span>32 comentarios</span>
+
+                    <span>
+                        👍 ❤️ 128
+                    </span>
+
+
+                    <span>
+                        32 comentarios
+                    </span>
+
                 </div>
+
+
 
                 <div class="post-actions">
 
@@ -138,9 +319,11 @@
                         👍 Me gusta
                     </button>
 
+
                     <button>
                         💬 Comentar
                     </button>
+
 
                     <button>
                         ↗️ Compartir
@@ -148,17 +331,32 @@
 
                 </div>
 
+
+
                 <div class="comments">
 
+
                     <div class="comment">
-                        <img src="src/images/micho.jpg">
+
+                        <img
+                            src="src/images/micho.jpg"
+                            alt="Micho"
+                        >
+
 
                         <div>
-                            <strong>Micho</strong>
+
+                            <strong>
+                                Micho
+                            </strong>
+
+
                             <p>
                                 ¡Excelente proyecto botudo! 🔥
                             </p>
+
                         </div>
+
                     </div>
 
                 </div>
@@ -166,39 +364,90 @@
             </article>
 
 
-            
+
+            <!-- =========================
+                 PUBLICACION LESLI
+            ========================= -->
+
             <article class="post">
+
 
                 <div class="post-header">
 
-                    <img src="src/images/lesli.jpg">
+                    <img
+                        src="src/images/lesli.jpg"
+                        alt="Lesli"
+                    >
+
 
                     <div>
-                        <strong>Lesli Rojas</strong>
-                        <p>Ayer · 📍 Minillas</p>
+
+                        <strong>
+                            Lesli Rojas
+                        </strong>
+
+
+                        <p>
+                            Ayer · 📍 Minillas
+                        </p>
+
                     </div>
 
-                    <button class="more">•••</button>
+
+                    <button class="more">
+                        •••
+                    </button>
 
                 </div>
 
+
+
                 <p class="post-text">
+
                     Un día increíble de clases con mis alumnos.
                     ❤️
+
                 </p>
+
+
 
                 <div class="photo-grid">
 
-                    <img src="https://picsum.photos/400/300?random=10">
-                    <img src="https://picsum.photos/400/300?random=11">
-                    <img src="https://picsum.photos/400/300?random=12">
+                    <img
+                        src="https://picsum.photos/400/300?random=10"
+                        alt="foto"
+                    >
+
+
+                    <img
+                        src="https://picsum.photos/400/300?random=11"
+                        alt="foto"
+                    >
+
+
+                    <img
+                        src="https://picsum.photos/400/300?random=12"
+                        alt="foto"
+                    >
 
                 </div>
+
+
 
                 <div class="post-stats">
-                    <span>👍 ❤️ 243</span>
-                    <span>47 comentarios</span>
+
+                    <span>
+                        👍 ❤️ 243
+                    </span>
+
+
+                    <span>
+                        47 comentarios
+                    </span>
+
                 </div>
+
+
 
                 <div class="post-actions">
 
@@ -206,9 +455,11 @@
                         👍 Me gusta
                     </button>
 
+
                     <button>
                         💬 Comentar
                     </button>
+
 
                     <button>
                         ↗️ Compartir
@@ -221,416 +472,123 @@
         </section>
 
 
-    
+
+        <!-- =========================
+             CONTACTOS
+        ========================= -->
+
         <aside class="right-sidebar">
 
-            <h3>Contactos</h3>
+
+            <h3>
+                Contactos
+            </h3>
+
+
 
             <div class="contact">
+
                 <div class="online">
-                    <img src="src/images/cristian.jpg">
+
+                    <img
+                        src="src/images/cristian.jpg"
+                        alt="Cristian"
+                    >
+
                     <span></span>
+
                 </div>
 
-                <strong>Cristian</strong>
+
+                <strong>
+                    Cristian
+                </strong>
+
             </div>
+
+
 
             <div class="contact">
+
                 <div class="online">
-                    <img src="src/images/micho.jpg">
+
+                    <img
+                        src="src/images/micho.jpg"
+                        alt="Micho"
+                    >
+
                     <span></span>
+
                 </div>
 
-                <strong>Micho</strong>
+
+                <strong>
+                    Micho
+                </strong>
+
             </div>
+
+
 
             <div class="contact">
+
                 <div class="online">
-                    <img src="src/images/shakira.jpg">
+
+                    <img
+                        src="src/images/shakira.jpg"
+                        alt="Shakira"
+                    >
+
                     <span></span>
+
                 </div>
 
-                <strong>Shakira</strong>
+
+                <strong>
+                    Shakira
+                </strong>
+
             </div>
+
+
 
             <div class="contact">
+
                 <div class="online">
-                    <img src="src/images/alison.jpg">
+
+                    <img
+                        src="src/images/alison.jpg"
+                        alt="Alison"
+                    >
+
                     <span></span>
+
                 </div>
 
-                <strong>Alison</strong>
+
+                <strong>
+                    Alison
+                </strong>
+
             </div>
+
 
         </aside>
 
     </main>
 
-<script>
 
-    /* =========================
-       MODO OSCURO
-    ========================= */
 
-    const darkMode = document.getElementById("darkMode");
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
-    darkMode.addEventListener("click", () => {
+    <script
+        type="module"
+        src="index.js"
+    ></script>
 
-        document.body.classList.toggle("dark");
 
-    });
-
-
-    /* =========================
-       LIKES
-    ========================= */
-
-    function activarLikes() {
-
-        const likeButtons =
-            document.querySelectorAll(".like-button");
-
-        likeButtons.forEach(button => {
-
-            if (button.dataset.likeActive === "true") {
-                return;
-            }
-
-            button.dataset.likeActive = "true";
-
-            button.addEventListener("click", () => {
-
-                button.classList.toggle("liked");
-
-                if (button.classList.contains("liked")) {
-
-                    button.innerHTML = "❤️ Me gusta";
-
-                } else {
-
-                    button.innerHTML = "👍 Me gusta";
-
-                }
-
-            });
-
-        });
-
-    }
-
-
-    /* =========================
-       COMENTARIOS
-    ========================= */
-
-    function activarComentarios() {
-
-        const buttons =
-            document.querySelectorAll(
-                ".post-actions button:nth-child(2)"
-            );
-
-        buttons.forEach(button => {
-
-            if (button.dataset.commentActive === "true") {
-                return;
-            }
-
-            button.dataset.commentActive = "true";
-
-            button.addEventListener("click", () => {
-
-                const post =
-                    button.closest(".post");
-
-                let commentBox =
-                    post.querySelector(".comment-box");
-
-
-                /* si ya existe */
-
-                if (commentBox) {
-
-                    commentBox
-                        .querySelector("input")
-                        .focus();
-
-                    return;
-
-                }
-
-
-                /* crear caja */
-
-                commentBox =
-                    document.createElement("div");
-
-                commentBox.className =
-                    "comment-box";
-
-
-                commentBox.innerHTML = `
-
-                    <input
-                        type="text"
-                        placeholder="Escribe un comentario..."
-                    >
-
-                    <button>
-                        Publicar
-                    </button>
-
-                `;
-
-
-                post.appendChild(commentBox);
-
-
-                const input =
-                    commentBox.querySelector("input");
-
-                const publish =
-                    commentBox.querySelector("button");
-
-
-                input.focus();
-
-
-                /* publicar */
-
-                publish.addEventListener("click", () => {
-
-                    agregarComentario(
-                        post,
-                        input
-                    );
-
-                });
-
-
-                /* enter */
-
-                input.addEventListener("keypress", event => {
-
-                    if (event.key === "Enter") {
-
-                        agregarComentario(
-                            post,
-                            input
-                        );
-
-                    }
-
-                });
-
-            });
-
-        });
-
-    }
-
-
-    function agregarComentario(post, input) {
-
-        const texto =
-            input.value.trim();
-
-
-        if (texto === "") {
-            return;
-        }
-
-
-        let comments =
-            post.querySelector(".comments");
-
-
-        /* crear sección de comentarios */
-
-        if (!comments) {
-
-            comments =
-                document.createElement("div");
-
-            comments.className =
-                "comments";
-
-            post.appendChild(comments);
-
-        }
-
-
-        /* crear comentario */
-
-        const nuevoComentario =
-            document.createElement("div");
-
-        nuevoComentario.className =
-            "comment";
-
-
-        nuevoComentario.innerHTML = `
-
-            <img src="src/images/kevin.jpg">
-
-            <div>
-
-                <strong>Kevin Alexis</strong>
-
-                <p>
-                    ${texto}
-                </p>
-
-            </div>
-
-        `;
-
-
-        comments.appendChild(
-            nuevoComentario
-        );
-
-
-        /* limpiar */
-
-        input.value = "";
-
-        input.focus();
-
-    }
-
-
-    /* =========================
-       CREAR PUBLICACIÓN
-    ========================= */
-
-    const publishButton =
-        document.getElementById("publishButton");
-
-    const postInput =
-        document.getElementById("postInput");
-
-    const feed =
-        document.querySelector(".feed");
-
-
-    publishButton.addEventListener("click", () => {
-
-        const text =
-            postInput.value.trim();
-
-
-        if (text === "") {
-
-            alert(
-                "Escribe algo antes de publicar."
-            );
-
-            return;
-
-        }
-
-
-        const newPost =
-            document.createElement("article");
-
-        newPost.className =
-            "post";
-
-
-        newPost.innerHTML = `
-
-            <div class="post-header">
-
-                <img src="src/images/kevin.jpg">
-
-                <div>
-
-                    <strong>
-                        Kevin Alexis
-                    </strong>
-
-                    <p>
-                        Ahora · 🌎
-                    </p>
-
-                </div>
-
-                <button class="more">
-                    •••
-                </button>
-
-            </div>
-
-
-            <p class="post-text">
-                ${text}
-            </p>
-
-
-            <div class="post-stats">
-
-                <span>
-                    👍 0
-                </span>
-
-                <span>
-                    0 comentarios
-                </span>
-
-            </div>
-
-
-            <div class="post-actions">
-
-                <button class="like-button">
-                    👍 Me gusta
-                </button>
-
-                <button>
-                    💬 Comentar
-                </button>
-
-                <button>
-                    ↗️ Compartir
-                </button>
-
-            </div>
-
-        `;
-
-
-        /* colocar publicación arriba */
-
-        const firstPost =
-            document.querySelector(".post");
-
-        feed.insertBefore(
-            newPost,
-            firstPost
-        );
-
-
-        /* limpiar */
-
-        postInput.value = "";
-
-
-        /* activar funciones */
-
-        activarLikes();
-        activarComentarios();
-
-    });
-
-
-    /* =========================
-       INICIAR FUNCIONES
-    ========================= */
-
-    activarLikes();
-    activarComentarios();
-
-</script>
 </body>
+
 </html>
