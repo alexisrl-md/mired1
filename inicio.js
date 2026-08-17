@@ -877,15 +877,18 @@ async function cargarContactos() {
 
 
             contacto.addEventListener(
-                "click",
-                () => {
+            "click",
+            () => {
 
-                    abrirChat(
-                        perfil
-                    );
+                console.log(
+                    "Abriendo chat con:",
+                    perfil.nombre
+                );
 
-                }
-            );
+                abrirChat(perfil);
+
+            }
+        );
 
 
             lista.appendChild(

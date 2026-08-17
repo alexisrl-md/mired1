@@ -1264,3 +1264,393 @@ body.dark .right-sidebar strong {
     bottom: 0;
 
 }
+/* =========================
+   VENTANA DE CHAT
+========================= */
+
+.chat-window {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 350px;
+    height: 500px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+
+/* =========================
+   MOSTRAR CHAT
+========================= */
+
+.chat-window.activo {
+
+    display: flex;
+
+}
+
+
+/* =========================
+   CABECERA DEL CHAT
+========================= */
+
+.chat-header {
+
+    height: 65px;
+
+    background: #1877f2;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+}
+
+
+.chat-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.chat-header button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   AVATAR CHAT
+========================= */
+
+.chat-user .profile-avatar {
+
+    background: white;
+
+    color: #1877f2;
+
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.chat-mensajes {
+
+    flex: 1;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    background: #f5f6f7;
+
+}
+
+
+.chat-vacio {
+
+    text-align: center;
+
+    color: #777;
+
+    margin: auto;
+
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.mensaje {
+
+    max-width: 75%;
+
+    padding: 9px 12px;
+
+    border-radius: 15px;
+
+    word-wrap: break-word;
+
+}
+
+
+.mensaje p {
+
+    margin: 0;
+
+}
+
+
+.mensaje small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    opacity: 0.7;
+
+}
+
+
+/* MENSAJE PROPIO */
+
+.mensaje-propio {
+
+    align-self: flex-end;
+
+    background: #1877f2;
+
+    color: white;
+
+    border-bottom-right-radius: 4px;
+
+}
+
+
+/* MENSAJE DEL OTRO */
+
+.mensaje-otro {
+
+    align-self: flex-start;
+
+    background: white;
+
+    color: #222;
+
+    border-bottom-left-radius: 4px;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =========================
+   INPUT DEL CHAT
+========================= */
+
+.chat-input {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    background: white;
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+.chat-input input {
+
+    flex: 1;
+
+    height: 40px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    padding: 0 15px;
+
+    outline: none;
+
+}
+
+
+.chat-input input:focus {
+
+    border-color: #1877f2;
+
+}
+
+
+.chat-input button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #1877f2;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
+
+.chat-input button:hover {
+
+    opacity: 0.85;
+
+}
+
+
+.chat-input button:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================
+   CONTACTOS
+========================= */
+
+.contact {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+}
+
+
+.contact:hover {
+
+    background: #f0f2f5;
+
+}
+
+
+.contact-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.contact-info strong {
+
+    font-size: 14px;
+
+}
+
+
+.contact-info small {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   ONLINE
+========================= */
+
+.online {
+
+    position: relative;
+
+}
+
+
+.online > span {
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #31a24c;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    right: 0;
+
+    bottom: 0;
+
+}
+
+
+/* =========================
+   IMAGEN DEL CONTACTO
+========================= */
+
+.online img {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+}
