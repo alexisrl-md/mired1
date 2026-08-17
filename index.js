@@ -1,4 +1,3 @@
-
 import { createClient } from
 "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
@@ -23,28 +22,156 @@ const supabase =
 
 
 /* =========================
-   USUARIO
+   VERIFICAR USUARIO
 ========================= */
 
-const { data } =
-    await supabase.auth.getUser();
+const {
+    data: {
+        user
+    }
+} = await supabase.auth.getUser();
 
 
-if (!data.user) {
+if (!user) {
 
-    window.location.href =
-        "index.html";
+    window.location.replace(
+        "index.html"
+    );
+
+    throw new Error(
+        "Usuario no autenticado"
+    );
 
 }
 
 
+/* =========================
+   DATOS DEL USUARIO
+========================= */
+
 const usuario =
-    data.user;
+    user;
 
 
 const nombreUsuario =
     usuario.user_metadata?.nombre ||
+    usuario.email?.split("@")[0] ||
     "Usuario";
+
+
+/* =========================
+   ELEMENTOS
+========================= */
+
+const nombreElemento =
+    document.getElementById(
+        "nombreUsuario"
+    );
+
+
+const usuarioElemento =
+    document.getElementById(
+        "usuarioNombre"
+    );
+
+
+const fotoSuperior =
+    document.getElementById(
+        "fotoUsuarioSuperior"
+    );
+
+
+const fotoUsuario =
+    document.getElementById(
+        "fotoUsuario"
+    );
+
+
+const fotoPublicacion =
+    document.getElementById(
+        "fotoUsuarioPublicacion"
+    );
+
+
+const postInput =
+    document.getElementById(
+        "postInput"
+    );
+
+
+const publishButton =
+    document.getElementById(
+        "publishButton"
+    );
+
+
+const feed =
+    document.querySelector(
+        ".feed"
+    );
+
+
+/* =========================
+   MOSTRAR NOMBRE
+========================= */
+
+if (nombreElemento) {
+
+    nombreElemento.textContent =
+        nombreUsuario;
+
+}
+
+
+if (usuarioElemento) {
+
+    usuarioElemento.textContent =
+        "@" +
+        nombreUsuario
+            .toLowerCase()
+            .replace(/\s+/g, "");
+
+}
+
+
+if (postInput) {
+
+    postInput.placeholder =
+        `¿Qué estás pensando, ${nombreUsuario}?`;
+
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+function ponerAvatar(elemento) {
+
+    if (!elemento) {
+
+        return;
+
+    }
+
+
+    const primeraLetra =
+        nombreUsuario
+            .charAt(0)
+            .toUpperCase();
+
+
+    elemento.textContent =
+        primeraLetra;
+
+}
+
+
+ponerAvatar(fotoSuperior);
+
+ponerAvatar(fotoUsuario);
+
+ponerAvatar(fotoPublicacion);
 
 
 /* =========================
@@ -52,42 +179,23 @@ const nombreUsuario =
 ========================= */
 
 const darkMode =
-    document.getElementById("darkMode");
-
-
-darkMode.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark");
-
-});
-
-
-/* =========================
-   ACTUALIZAR NOMBRE
-========================= */
-
-const nombres =
-    document.querySelectorAll(
-        ".user-card strong"
+    document.getElementById(
+        "darkMode"
     );
 
 
-nombres.forEach(elemento => {
+if (darkMode) {
 
-    elemento.textContent =
-        nombreUsuario;
+    darkMode.addEventListener(
+        "click",
+        () => {
 
-});
+            document.body.classList.toggle(
+                "dark"
+            );
 
-
-const postInput =
-    document.getElementById("postInput");
-
-
-if (postInput) {
-
-    postInput.placeholder =
-        `¿Qué estás pensando, ${nombreUsuario}?`;
+        }
+    );
 
 }
 
@@ -104,51 +212,54 @@ function activarLikes() {
         );
 
 
-    likeButtons.forEach(button => {
-
-        if (
-            button.dataset.likeActive ===
-            "true"
-        ) {
-
-            return;
-
-        }
+    likeButtons.forEach(
+        button => {
 
 
-        button.dataset.likeActive =
-            "true";
+            if (
+                button.dataset.likeActive ===
+                "true"
+            ) {
 
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                button.classList.toggle(
-                    "liked"
-                );
-
-
-                if (
-                    button.classList.contains(
-                        "liked"
-                    )
-                ) {
-
-                    button.innerHTML =
-                        "❤️ Me gusta";
-
-                } else {
-
-                    button.innerHTML =
-                        "👍 Me gusta";
-
-                }
+                return;
 
             }
-        );
 
-    });
+
+            button.dataset.likeActive =
+                "true";
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    button.classList.toggle(
+                        "liked"
+                    );
+
+
+                    if (
+                        button.classList.contains(
+                            "liked"
+                        )
+                    ) {
+
+                        button.innerHTML =
+                            "❤️ Me gusta";
+
+                    } else {
+
+                        button.innerHTML =
+                            "👍 Me gusta";
+
+                    }
+
+                }
+            );
+
+        }
+    );
 
 }
 
@@ -165,120 +276,99 @@ function activarComentarios() {
         );
 
 
-    buttons.forEach(button => {
-
-        if (
-            button.dataset.commentActive ===
-            "true"
-        ) {
-
-            return;
-
-        }
+    buttons.forEach(
+        button => {
 
 
-        button.dataset.commentActive =
-            "true";
+            if (
+                button.dataset.commentActive ===
+                "true"
+            ) {
+
+                return;
+
+            }
 
 
-        button.addEventListener(
-            "click",
-            () => {
-
-                const post =
-                    button.closest(".post");
+            button.dataset.commentActive =
+                "true";
 
 
-                let commentBox =
-                    post.querySelector(
-                        ".comment-box"
-                    );
+            button.addEventListener(
+                "click",
+                () => {
 
 
-                /* si ya existe */
-
-                if (commentBox) {
-
-                    commentBox
-                        .querySelector("input")
-                        .focus();
-
-                    return;
-
-                }
-
-
-                /* crear caja */
-
-                commentBox =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                commentBox.className =
-                    "comment-box";
-
-
-                commentBox.innerHTML = `
-
-                    <input
-                        type="text"
-                        placeholder="Escribe un comentario..."
-                    >
-
-                    <button>
-                        Publicar
-                    </button>
-
-                `;
-
-
-                post.appendChild(
-                    commentBox
-                );
-
-
-                const input =
-                    commentBox.querySelector(
-                        "input"
-                    );
-
-
-                const publish =
-                    commentBox.querySelector(
-                        "button"
-                    );
-
-
-                input.focus();
-
-
-                /* publicar */
-
-                publish.addEventListener(
-                    "click",
-                    () => {
-
-                        agregarComentario(
-                            post,
-                            input
+                    const post =
+                        button.closest(
+                            ".post"
                         );
 
+
+                    let commentBox =
+                        post.querySelector(
+                            ".comment-box"
+                        );
+
+
+                    if (commentBox) {
+
+                        commentBox
+                            .querySelector("input")
+                            .focus();
+
+                        return;
+
                     }
-                );
 
 
-                /* enter */
+                    commentBox =
+                        document.createElement(
+                            "div"
+                        );
 
-                input.addEventListener(
-                    "keypress",
-                    event => {
 
-                        if (
-                            event.key ===
-                            "Enter"
-                        ) {
+                    commentBox.className =
+                        "comment-box";
+
+
+                    commentBox.innerHTML = `
+
+                        <input
+                            type="text"
+                            placeholder="Escribe un comentario..."
+                        >
+
+                        <button>
+                            Publicar
+                        </button>
+
+                    `;
+
+
+                    post.appendChild(
+                        commentBox
+                    );
+
+
+                    const input =
+                        commentBox.querySelector(
+                            "input"
+                        );
+
+
+                    const publish =
+                        commentBox.querySelector(
+                            "button"
+                        );
+
+
+                    input.focus();
+
+
+                    publish.addEventListener(
+                        "click",
+                        () => {
 
                             agregarComentario(
                                 post,
@@ -286,14 +376,33 @@ function activarComentarios() {
                             );
 
                         }
+                    );
 
-                    }
-                );
 
-            }
-        );
+                    input.addEventListener(
+                        "keypress",
+                        event => {
 
-    });
+                            if (
+                                event.key ===
+                                "Enter"
+                            ) {
+
+                                agregarComentario(
+                                    post,
+                                    input
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
 
 }
 
@@ -306,6 +415,7 @@ function agregarComentario(
     post,
     input
 ) {
+
 
     const texto =
         input.value.trim();
@@ -323,8 +433,6 @@ function agregarComentario(
             ".comments"
         );
 
-
-    /* crear sección de comentarios */
 
     if (!comments) {
 
@@ -345,8 +453,6 @@ function agregarComentario(
     }
 
 
-    /* crear comentario */
-
     const nuevoComentario =
         document.createElement(
             "div"
@@ -359,7 +465,13 @@ function agregarComentario(
 
     nuevoComentario.innerHTML = `
 
-        <img src="src/images/kevin.jpg">
+        <div
+            class="profile-avatar profile-avatar-small"
+        >
+            ${nombreUsuario
+                .charAt(0)
+                .toUpperCase()}
+        </div>
 
         <div>
 
@@ -381,8 +493,6 @@ function agregarComentario(
     );
 
 
-    /* limpiar */
-
     input.value = "";
 
     input.focus();
@@ -391,148 +501,185 @@ function agregarComentario(
 
 
 /* =========================
-   CREAR PUBLICACIÓN
+   CREAR PUBLICACION
 ========================= */
 
-const publishButton =
-    document.getElementById(
-        "publishButton"
-    );
+if (
+    publishButton &&
+    postInput &&
+    feed
+) {
 
 
-const feed =
-    document.querySelector(
-        ".feed"
-    );
+    publishButton.addEventListener(
+        "click",
+        () => {
 
 
-publishButton.addEventListener(
-    "click",
-    () => {
-
-        const text =
-            postInput.value.trim();
+            const text =
+                postInput.value.trim();
 
 
-        if (text === "") {
+            if (text === "") {
 
-            alert(
-                "Escribe algo antes de publicar."
-            );
+                alert(
+                    "Escribe algo antes de publicar."
+                );
 
-            return;
+                return;
 
-        }
-
-
-        const newPost =
-            document.createElement(
-                "article"
-            );
+            }
 
 
-        newPost.className =
-            "post";
+            const newPost =
+                document.createElement(
+                    "article"
+                );
 
 
-        newPost.innerHTML = `
+            newPost.className =
+                "post";
 
-            <div class="post-header">
 
-                <img
-                    src="src/images/kevin.jpg"
-                >
+            newPost.innerHTML = `
 
-                <div>
+                <div class="post-header">
 
-                    <strong>
-                        ${nombreUsuario}
-                    </strong>
+                    <div
+                        class="profile-avatar"
+                    >
+                        ${nombreUsuario
+                            .charAt(0)
+                            .toUpperCase()}
+                    </div>
 
-                    <p>
-                        Ahora · 🌎
-                    </p>
+                    <div>
+
+                        <strong>
+                            ${nombreUsuario}
+                        </strong>
+
+                        <p>
+                            Ahora · 🌎
+                        </p>
+
+                    </div>
+
+                    <button class="more">
+                        •••
+                    </button>
 
                 </div>
 
-                <button class="more">
-                    •••
-                </button>
 
-            </div>
-
-
-            <p class="post-text">
-                ${text}
-            </p>
+                <p class="post-text">
+                    ${text}
+                </p>
 
 
-            <div class="post-stats">
+                <div class="post-stats">
 
-                <span>
-                    👍 0
-                </span>
+                    <span>
+                        👍 0
+                    </span>
 
-                <span>
-                    0 comentarios
-                </span>
+                    <span>
+                        0 comentarios
+                    </span>
 
-            </div>
-
-
-            <div class="post-actions">
-
-                <button class="like-button">
-                    👍 Me gusta
-                </button>
-
-                <button>
-                    💬 Comentar
-                </button>
-
-                <button>
-                    ↗️ Compartir
-                </button>
-
-            </div>
-
-        `;
+                </div>
 
 
-        /* colocar publicación arriba */
+                <div class="post-actions">
 
-        const firstPost =
-            document.querySelector(
-                ".post"
-            );
+                    <button class="like-button">
+                        👍 Me gusta
+                    </button>
+
+                    <button>
+                        💬 Comentar
+                    </button>
+
+                    <button>
+                        ↗️ Compartir
+                    </button>
+
+                </div>
+
+            `;
 
 
-        feed.insertBefore(
-            newPost,
-            firstPost
-        );
+            const firstPost =
+                document.querySelector(
+                    ".post"
+                );
 
 
-        /* limpiar */
+            if (firstPost) {
 
-        postInput.value = "";
+                feed.insertBefore(
+                    newPost,
+                    firstPost
+                );
+
+            } else {
+
+                feed.appendChild(
+                    newPost
+                );
+
+            }
 
 
-        /* activar funciones */
+            postInput.value = "";
 
-        activarLikes();
 
-        activarComentarios();
+            activarLikes();
 
-    }
-);
+            activarComentarios();
+
+        }
+    );
+
+}
 
 
 /* =========================
-   INICIAR FUNCIONES
+   CERRAR SESION
+========================= */
+
+const cerrarSesion =
+    document.getElementById(
+        "cerrarSesion"
+    );
+
+
+if (cerrarSesion) {
+
+    cerrarSesion.addEventListener(
+        "click",
+        async event => {
+
+            event.preventDefault();
+
+
+            await supabase.auth.signOut();
+
+
+            window.location.replace(
+                "index.html"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   INICIAR
 ========================= */
 
 activarLikes();
 
 activarComentarios();
-
