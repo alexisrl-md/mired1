@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crear cuenta - GoodJoob</title>
+
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+
+<body>
+
+    <div class="login-container">
+
+        <div class="logo">
+            Good<span>Joob</span>
+        </div>
+
+        <h1>Crear una cuenta</h1>
+
+        <p class="subtitle">
+            Encuentra oportunidades de trabajo
+        </p>
+
+
+        <form id="registroForm">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre completo"
+                required
+            >
+
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Correo electrónico"
+                required
+            >
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Contraseña"
+                required
+                minlength="6"
+            >
+
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirmar contraseña"
+                required
+                minlength="6"
+            >
+
+
+            <button type="submit">
+                Crear cuenta
+            </button>
+
+        </form>
+
+
+        <p id="mensaje"></p>
+
+
+        <div class="separador"></div>
+
+
+        <p>
+            ¿Ya tienes una cuenta?
+        </p>
+
+        <a href="login.html">
+            Iniciar sesión
+        </a>
+
+    </div>
+
+
+    <script type="module" src="registro.js"></script>
+
+</body>
+
+</html>
