@@ -33,7 +33,7 @@ const { data } =
 if (!data.user) {
 
     window.location.href =
-        "login.html";
+        "index.html";
 
 }
 
