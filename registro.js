@@ -3,7 +3,7 @@ import { createClient } from
 
 
 const supabaseUrl =
-    "https://pcwcmeahwbozwitqahue.supabase.co/rest/v1/";
+    "https://pcwcmeahwbozwitqahue.supabase.co";
 
 
 const supabaseKey =
