@@ -9,14 +9,17 @@ import { createClient } from
 const supabaseUrl =
     "https://pcwcmeahwbozwitqahue.supabase.co";
 
+
 const supabaseKey =
     "sb_publishable_sT_QqB0PnBdFx6iFK2JZiw_LoB68n2Z";
+
 
 const supabase =
     createClient(
         supabaseUrl,
         supabaseKey
     );
+
 
 
 /* =========================
@@ -43,6 +46,7 @@ if (!user) {
 }
 
 
+
 /* =========================
    USUARIO ACTUAL
 ========================= */
@@ -55,6 +59,7 @@ const nombreUsuario =
     usuario.user_metadata?.nombre ||
     usuario.email?.split("@")[0] ||
     "Usuario";
+
 
 
 /* =========================
@@ -109,6 +114,7 @@ const feed =
     );
 
 
+
 /* =========================
    MOSTRAR USUARIO
 ========================= */
@@ -140,11 +146,14 @@ if (postInput) {
 }
 
 
+
 /* =========================
    AVATAR
 ========================= */
 
-function ponerAvatar(elemento) {
+function ponerAvatar(
+    elemento
+) {
 
     if (!elemento) {
 
@@ -153,23 +162,28 @@ function ponerAvatar(elemento) {
     }
 
 
-    const letra =
+    elemento.textContent =
         nombreUsuario
             .charAt(0)
             .toUpperCase();
 
-
-    elemento.textContent =
-        letra;
-
 }
 
 
-ponerAvatar(fotoSuperior);
+ponerAvatar(
+    fotoSuperior
+);
 
-ponerAvatar(fotoUsuario);
 
-ponerAvatar(fotoPublicacion);
+ponerAvatar(
+    fotoUsuario
+);
+
+
+ponerAvatar(
+    fotoPublicacion
+);
+
 
 
 /* =========================
@@ -196,6 +210,7 @@ if (darkMode) {
     );
 
 }
+
 
 
 /* =========================
@@ -261,6 +276,7 @@ function activarLikes() {
 }
 
 
+
 /* =========================
    COMENTARIOS
 ========================= */
@@ -309,7 +325,9 @@ function activarComentarios() {
                     if (commentBox) {
 
                         commentBox
-                            .querySelector("input")
+                            .querySelector(
+                                "input"
+                            )
                             .focus();
 
                         return;
@@ -402,6 +420,7 @@ function activarComentarios() {
 }
 
 
+
 /* =========================
    AGREGAR COMENTARIO
 ========================= */
@@ -462,10 +481,13 @@ function agregarComentario(
         <div
             class="profile-avatar profile-avatar-small"
         >
+
             ${nombreUsuario
                 .charAt(0)
                 .toUpperCase()}
+
         </div>
+
 
         <div>
 
@@ -473,8 +495,9 @@ function agregarComentario(
                 ${nombreUsuario}
             </strong>
 
+
             <p>
-                ${texto}
+                ${escapeHtml(texto)}
             </p>
 
         </div>
@@ -492,6 +515,7 @@ function agregarComentario(
     input.focus();
 
 }
+
 
 
 /* =========================
@@ -540,9 +564,11 @@ if (
                     <div
                         class="profile-avatar"
                     >
+
                         ${nombreUsuario
                             .charAt(0)
                             .toUpperCase()}
+
                     </div>
 
 
@@ -568,7 +594,7 @@ if (
 
 
                 <p class="post-text">
-                    ${texto}
+                    ${escapeHtml(texto)}
                 </p>
 
 
@@ -577,6 +603,7 @@ if (
                     <span>
                         👍 0
                     </span>
+
 
                     <span>
                         0 comentarios
@@ -641,6 +668,7 @@ if (
 }
 
 
+
 /* =========================
    CERRAR SESION
 ========================= */
@@ -673,8 +701,9 @@ if (cerrarSesion) {
 }
 
 
+
 /* =========================
-   CARGAR CONTACTOS
+   CONTACTOS
 ========================= */
 
 async function cargarContactos() {
@@ -781,8 +810,6 @@ async function cargarContactos() {
                 "pointer";
 
 
-            /* AVATAR */
-
             let avatar;
 
 
@@ -802,26 +829,25 @@ async function cargarContactos() {
 
             } else {
 
-                const letra =
-                    perfil.nombre
-                        .charAt(0)
-                        .toUpperCase();
-
-
                 avatar = `
 
                     <div
-                        class="profile-avatar profile-avatar-small"
+                        class="
+                            profile-avatar
+                            profile-avatar-small
+                        "
                     >
-                        ${letra}
+
+                        ${perfil.nombre
+                            .charAt(0)
+                            .toUpperCase()}
+
                     </div>
 
                 `;
 
             }
 
-
-            /* CONTACTO */
 
             contacto.innerHTML = `
 
@@ -840,6 +866,7 @@ async function cargarContactos() {
                         ${perfil.nombre}
                     </strong>
 
+
                     <small>
                         @${perfil.username}
                     </small>
@@ -848,8 +875,6 @@ async function cargarContactos() {
 
             `;
 
-
-            /* ABRIR CHAT */
 
             contacto.addEventListener(
                 "click",
@@ -873,6 +898,7 @@ async function cargarContactos() {
 }
 
 
+
 /* =========================
    ELEMENTOS DEL CHAT
 ========================= */
@@ -880,6 +906,12 @@ async function cargarContactos() {
 const chatWindow =
     document.getElementById(
         "chatWindow"
+    );
+
+
+const chatAvatar =
+    document.getElementById(
+        "chatAvatar"
     );
 
 
@@ -913,11 +945,14 @@ const cerrarChat =
     );
 
 
+
 /* =========================
    CONTACTO ACTUAL
 ========================= */
 
-let contactoActual = null;
+let contactoActual =
+    null;
+
 
 
 /* =========================
@@ -949,6 +984,16 @@ async function abrirChat(
     }
 
 
+    if (chatAvatar) {
+
+        chatAvatar.textContent =
+            contacto.nombre
+                .charAt(0)
+                .toUpperCase();
+
+    }
+
+
     if (mensajeInput) {
 
         mensajeInput.value = "";
@@ -961,6 +1006,7 @@ async function abrirChat(
     await cargarMensajes();
 
 }
+
 
 
 /* =========================
@@ -977,9 +1023,13 @@ if (cerrarChat) {
                 null;
 
 
-            chatWindow.classList.remove(
-                "activo"
-            );
+            if (chatWindow) {
+
+                chatWindow.classList.remove(
+                    "activo"
+                );
+
+            }
 
 
             if (chatMensajes) {
@@ -987,7 +1037,10 @@ if (cerrarChat) {
                 chatMensajes.innerHTML = `
 
                     <p class="chat-vacio">
-                        Selecciona un contacto para comenzar.
+
+                        Selecciona un contacto
+                        para comenzar.
+
                     </p>
 
                 `;
@@ -998,6 +1051,7 @@ if (cerrarChat) {
     );
 
 }
+
 
 
 /* =========================
@@ -1056,7 +1110,10 @@ async function cargarMensajes() {
         chatMensajes.innerHTML = `
 
             <p class="chat-vacio">
-                No se pudieron cargar los mensajes.
+
+                Error al cargar
+                los mensajes.
+
             </p>
 
         `;
@@ -1077,8 +1134,10 @@ async function cargarMensajes() {
         chatMensajes.innerHTML = `
 
             <p class="chat-vacio">
+
                 No hay mensajes todavía.
                 ¡Envía el primero!
+
             </p>
 
         `;
@@ -1102,6 +1161,7 @@ async function cargarMensajes() {
     bajarChat();
 
 }
+
 
 
 /* =========================
@@ -1155,6 +1215,7 @@ function mostrarMensaje(
             )}
         </p>
 
+
         <small>
             ${formatearHora(
                 mensaje.creado_en
@@ -1169,6 +1230,7 @@ function mostrarMensaje(
     );
 
 }
+
 
 
 /* =========================
@@ -1192,6 +1254,7 @@ function escapeHtml(
     return div.innerHTML;
 
 }
+
 
 
 /* =========================
@@ -1222,6 +1285,7 @@ function formatearHora(
 }
 
 
+
 /* =========================
    BAJAR CHAT
 ========================= */
@@ -1241,6 +1305,7 @@ function bajarChat() {
 }
 
 
+
 /* =========================
    ENVIAR MENSAJE
 ========================= */
@@ -1249,7 +1314,8 @@ async function enviarMensajeChat() {
 
     if (
         !contactoActual ||
-        !mensajeInput
+        !mensajeInput ||
+        !enviarMensaje
     ) {
 
         return;
@@ -1273,6 +1339,7 @@ async function enviarMensajeChat() {
 
 
     const {
+        data,
         error
     } =
         await supabase
@@ -1288,7 +1355,9 @@ async function enviarMensajeChat() {
                 mensaje:
                     texto
 
-            });
+            })
+            .select()
+            .single();
 
 
     enviarMensaje.disabled =
@@ -1316,7 +1385,24 @@ async function enviarMensajeChat() {
 
     mensajeInput.focus();
 
+
+    /*
+       Mostramos el mensaje
+       inmediatamente.
+    */
+
+    if (data) {
+
+        mostrarMensaje(
+            data
+        );
+
+        bajarChat();
+
+    }
+
 }
+
 
 
 /* =========================
@@ -1333,8 +1419,9 @@ if (enviarMensaje) {
 }
 
 
+
 /* =========================
-   ENTER PARA ENVIAR
+   ENTER
 ========================= */
 
 if (mensajeInput) {
@@ -1360,8 +1447,9 @@ if (mensajeInput) {
 }
 
 
+
 /* =========================
-   MENSAJES EN TIEMPO REAL
+   TIEMPO REAL
 ========================= */
 
 const canalMensajes =
@@ -1384,6 +1472,21 @@ const canalMensajes =
 
                 if (
                     !contactoActual
+                ) {
+
+                    return;
+
+                }
+
+
+                /*
+                   Evitar duplicar
+                   mensajes propios.
+                */
+
+                if (
+                    nuevoMensaje.remitente ===
+                    usuario.id
                 ) {
 
                     return;
@@ -1426,6 +1529,7 @@ const canalMensajes =
             }
         )
         .subscribe();
+
 
 
 /* =========================

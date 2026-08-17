@@ -916,3 +916,351 @@ body.dark .right-sidebar strong {
 .contact:hover {
     background: rgba(0, 0, 0, 0.05);
 }
+/* =========================
+   CHAT
+========================= */
+
+.chat-window {
+
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 20px;
+
+    width: 360px;
+
+    height: 500px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    z-index: 9999;
+
+}
+
+
+.chat-window.activo {
+
+    display: flex;
+
+}
+
+
+/* =========================
+   CABECERA
+========================= */
+
+.chat-header {
+
+    height: 65px;
+
+    padding: 10px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+.chat-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.chat-header button {
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.chat-mensajes {
+
+    flex: 1;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    background: #f5f6f8;
+
+}
+
+
+.chat-vacio {
+
+    text-align: center;
+
+    color: #777;
+
+    margin-top: 150px;
+
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.mensaje {
+
+    max-width: 75%;
+
+    padding: 9px 13px;
+
+    border-radius: 15px;
+
+    word-wrap: break-word;
+
+}
+
+
+.mensaje p {
+
+    margin: 0;
+
+}
+
+
+.mensaje small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    opacity: 0.7;
+
+}
+
+
+.mensaje-propio {
+
+    align-self: flex-end;
+
+    background: #1877f2;
+
+    color: white;
+
+    border-bottom-right-radius: 4px;
+
+}
+
+
+.mensaje-otro {
+
+    align-self: flex-start;
+
+    background: white;
+
+    color: #222;
+
+    border-bottom-left-radius: 4px;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.chat-input {
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    background: white;
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+.chat-input input {
+
+    flex: 1;
+
+    border: 1px solid #ccc;
+
+    border-radius: 20px;
+
+    padding: 10px 15px;
+
+    outline: none;
+
+}
+
+
+.chat-input button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #1877f2;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
+
+.chat-input button:hover {
+
+    opacity: 0.85;
+
+}
+
+
+/* =========================
+   CONTACTOS
+========================= */
+
+.contact {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+}
+
+
+.contact:hover {
+
+    background: #f0f2f5;
+
+}
+
+
+.contact-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.contact-info small {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.profile-avatar-small {
+
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #1877f2;
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+.online {
+
+    position: relative;
+
+}
+
+
+.online > span {
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #31a24c;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    right: 0;
+
+    bottom: 0;
+
+}

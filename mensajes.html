@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GoodJoob - Mensajes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            Good<span>Joob</span>
+        </div>
+
+        <nav class="top-menu">
+
+            <button
+                onclick="window.location.href='inicio.html'"
+            >
+                🏠
+            </button>
+
+            <button>
+                👥
+            </button>
+
+            <button>
+                💬
+            </button>
+
+            <button>
+                🔔
+            </button>
+
+            <button id="darkMode">
+                🌙
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main class="messages-container">
+
+        <aside class="messages-contacts">
+
+            <h2>
+                Mensajes
+            </h2>
+
+            <div id="listaContactos">
+
+                <p>
+                    Cargando contactos...
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <section class="chat">
+
+            <div
+                id="chatHeader"
+                class="chat-header"
+            >
+
+                <h2>
+                    Selecciona un contacto
+                </h2>
+
+            </div>
+
+
+            <div
+                id="mensajes"
+                class="messages-list"
+            >
+
+                <p>
+                    Selecciona un usuario para comenzar
+                    una conversación.
+                </p>
+
+            </div>
+
+
+            <div class="message-input">
+
+                <input
+                    type="text"
+                    id="mensajeInput"
+                    placeholder="Escribe un mensaje..."
+                >
+
+                <button id="enviarMensaje">
+                    Enviar
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script
+        type="module"
+        src="mensajes.js"
+    ></script>
+
+</body>
+
+</html>
