@@ -18,30 +18,40 @@ const supabase =
 
 
 const formulario =
-    document.getElementById("registroForm");
+    document.getElementById(
+        "registroForm"
+    );
 
 
 const mensaje =
-    document.getElementById("mensaje");
+    document.getElementById(
+        "mensaje"
+    );
 
 
 formulario.addEventListener(
     "submit",
-    async (event) => {
+    async event => {
 
         event.preventDefault();
 
 
         const nombre =
-            document.getElementById("nombre").value.trim();
+            document.getElementById(
+                "nombre"
+            ).value.trim();
 
 
         const email =
-            document.getElementById("email").value.trim();
+            document.getElementById(
+                "email"
+            ).value.trim();
 
 
         const password =
-            document.getElementById("password").value;
+            document.getElementById(
+                "password"
+            ).value;
 
 
         const confirmPassword =
@@ -50,7 +60,10 @@ formulario.addEventListener(
             ).value;
 
 
-        if (password !== confirmPassword) {
+        if (
+            password !==
+            confirmPassword
+        ) {
 
             mensaje.textContent =
                 "Las contraseñas no coinciden.";
@@ -64,7 +77,14 @@ formulario.addEventListener(
             "Creando cuenta...";
 
 
-        const { data, error } =
+        /* =========================
+           CREAR CUENTA
+        ========================= */
+
+        const {
+            data,
+            error
+        } =
             await supabase.auth.signUp({
 
                 email: email,
@@ -74,7 +94,9 @@ formulario.addEventListener(
                 options: {
 
                     data: {
+
                         nombre: nombre
+
                     }
 
                 }
@@ -84,6 +106,11 @@ formulario.addEventListener(
 
         if (error) {
 
+            console.error(
+                "ERROR AUTH:",
+                error
+            );
+
             mensaje.textContent =
                 error.message;
 
@@ -92,8 +119,101 @@ formulario.addEventListener(
         }
 
 
+        console.log(
+            "USUARIO CREADO:",
+            data.user
+        );
+
+
+        if (!data.user) {
+
+            mensaje.textContent =
+                "No se pudo crear el usuario.";
+
+            return;
+
+        }
+
+
+        /* =========================
+           CREAR USERNAME
+        ========================= */
+
+        const username =
+            nombre
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ""
+                )
+                .replace(
+                    /\s+/g,
+                    ""
+                );
+
+
+        /* =========================
+           CREAR PERFIL
+        ========================= */
+
+        const {
+            data: perfil,
+            error: perfilError
+        } =
+            await supabase
+                .from("perfiles")
+                .insert({
+
+                    id:
+                        data.user.id,
+
+                    nombre:
+                        nombre,
+
+                    correo:
+                        email,
+
+                    username:
+                        username,
+
+                    foto:
+                        null
+
+                })
+                .select()
+                .single();
+
+
+        if (perfilError) {
+
+            console.error(
+                "ERROR PERFIL:",
+                perfilError
+            );
+
+
+            mensaje.textContent =
+                "La cuenta se creó, pero no se pudo crear el perfil.";
+
+            return;
+
+        }
+
+
+        console.log(
+            "PERFIL CREADO:",
+            perfil
+        );
+
+
+        /* =========================
+           TODO CORRECTO
+        ========================= */
+
         mensaje.textContent =
             "Cuenta creada correctamente. Revisa tu correo para confirmar tu cuenta.";
+
 
         formulario.reset();
 
