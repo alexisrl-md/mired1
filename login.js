@@ -58,7 +58,7 @@ formulario.addEventListener(
         setTimeout(() => {
 
             window.location.href =
-                "index.html";
+                "inicio.html";
 
         }, 1000);
 

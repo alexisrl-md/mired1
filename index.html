@@ -10,579 +10,71 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>GoodJoob - Encuentra empleo remoto</title>
+    <title>Iniciar sesión - GoodJoob</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 
 </head>
 
 
 <body>
 
-
-    <!-- =========================
-         BARRA SUPERIOR
-    ========================= -->
-
-    <header class="navbar">
+    <div class="login-container">
 
         <div class="logo">
             Good<span>Joob</span>
         </div>
 
+        <h1>Bienvenido de nuevo</h1>
 
-        <div class="search">
+        <p class="subtitle">
+            Inicia sesión para continuar
+        </p>
 
-            🔍
+
+        <form id="loginForm">
 
             <input
-                type="text"
-                placeholder="Buscar empleo cerca de mi ciudad"
+                type="email"
+                id="email"
+                placeholder="Correo electrónico"
+                required
             >
 
-        </div>
 
-
-        <nav class="top-menu">
-
-            <button>
-                🏠
-            </button>
-
-
-            <button>
-                👥
-            </button>
-
-
-            <button>
-                💬
-            </button>
-
-
-            <button>
-                🔔
-            </button>
-
-
-            <button id="darkMode">
-                🌙
-            </button>
-
-
-            <!-- FOTO DEL USUARIO ACTUAL -->
-
-            <div class="profile-small">
-
-                <div
-                    id="fotoUsuarioSuperior"
-                    class="profile-avatar"
-                >
-                    U
-                </div>
-
-            </div>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =========================
-         CONTENIDO PRINCIPAL
-    ========================= -->
-
-    <main class="container">
-
-
-        <!-- =========================
-             MENU LATERAL
-        ========================= -->
-
-        <aside class="sidebar">
-
-
-            <!-- USUARIO ACTUAL -->
-
-            <div class="user-card">
-
-
-                <div
-                    id="fotoUsuario"
-                    class="profile-avatar profile-avatar-large"
-                >
-                    U
-                </div>
-
-
-                <div>
-
-                    <strong id="nombreUsuario">
-                        Usuario
-                    </strong>
-
-
-                    <p id="usuarioNombre">
-                        @usuario
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- MENU -->
-
-            <div class="menu">
-
-
-                <a href="#">
-                    🏠
-                    <span>
-                        Inicio
-                    </span>
-                </a>
-
-
-                <a href="#">
-                    👤
-                    <span>
-                        Mi perfil
-                    </span>
-                </a>
-
-
-                <a href="#">
-                    👥
-                    <span>
-                        Amigos
-                    </span>
-                </a>
-
-
-                <a href="#">
-                    💬
-                    <span>
-                        Mensajes
-                    </span>
-                </a>
-
-
-                <a href="#">
-                    📷
-                    <span>
-                        Fotos
-                    </span>
-                </a>
-
-
-                <a href="#">
-                    🎬
-                    <span>
-                        Videos
-                    </span>
-                </a>
-
-
-                <a href="#">
-                    ⚙️
-                    <span>
-                        Configuración
-                    </span>
-                </a>
-
-
-                <a
-                    href="#"
-                    id="cerrarSesion"
-                >
-                    🚪
-                    <span>
-                        Cerrar sesión
-                    </span>
-                </a>
-
-            </div>
-
-        </aside>
-
-
-
-        <!-- =========================
-             FEED
-        ========================= -->
-
-        <section class="feed">
-
-
-            <!-- =========================
-                 CREAR PUBLICACION
-            ========================= -->
-
-            <div class="create-post">
-
-
-                <div class="post-top">
-
-
-                    <!-- FOTO DEL USUARIO -->
-
-                    <div
-                        id="fotoUsuarioPublicacion"
-                        class="profile-avatar"
-                    >
-                        U
-                    </div>
-
-
-                    <input
-                        type="text"
-                        id="postInput"
-                        placeholder="¿Qué estás pensando?"
-                    >
-
-                </div>
-
-
-
-                <div class="post-options">
-
-
-                    <button>
-                        📹 Video
-                    </button>
-
-
-                    <button>
-                        📷 Foto
-                    </button>
-
-
-                    <button>
-                        😊 Sentimiento
-                    </button>
-
-
-                    <button
-                        class="publish"
-                        id="publishButton"
-                    >
-                        Publicar
-                    </button>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =========================
-                 PUBLICACION DE EJEMPLO
-            ========================= -->
-
-            <article class="post">
-
-
-                <div class="post-header">
-
-
-                    <div
-                        class="profile-avatar"
-                    >
-                        C
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            Cristian Rojas
-                        </strong>
-
-
-                        <p>
-                            Hace 2 horas · 🌎
-                        </p>
-
-                    </div>
-
-
-                    <button class="more">
-                        •••
-                    </button>
-
-                </div>
-
-
-
-                <p class="post-text">
-
-                    Hoy terminé mi proyecto de
-                    Healt Manager. Después de
-                    muchas horas de código
-                    finalmente funciona. 💻🔥
-
-                </p>
-
-
-
-                <div class="post-image">
-
-                    <div class="code-image">
-
-                        &lt;/&gt;
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="post-stats">
-
-
-                    <span>
-                        👍 ❤️ 128
-                    </span>
-
-
-                    <span>
-                        32 comentarios
-                    </span>
-
-
-                </div>
-
-
-
-                <div class="post-actions">
-
-
-                    <button class="like-button">
-                        👍 Me gusta
-                    </button>
-
-
-                    <button>
-                        💬 Comentar
-                    </button>
-
-
-                    <button>
-                        ↗️ Compartir
-                    </button>
-
-
-                </div>
-
-
-
-                <div class="comments">
-
-
-                    <div class="comment">
-
-
-                        <div
-                            class="profile-avatar profile-avatar-small"
-                        >
-                            M
-                        </div>
-
-
-                        <div>
-
-
-                            <strong>
-                                Micho
-                            </strong>
-
-
-                            <p>
-                                ¡Excelente proyecto botudo! 🔥
-                            </p>
-
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-
-            <!-- =========================
-                 PUBLICACION DE EJEMPLO
-            ========================= -->
-
-            <article class="post">
-
-
-                <div class="post-header">
-
-
-                    <div
-                        class="profile-avatar"
-                    >
-                        L
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            Lesli Rojas
-                        </strong>
-
-
-                        <p>
-                            Ayer · 📍 Minillas
-                        </p>
-
-                    </div>
-
-
-                    <button class="more">
-                        •••
-                    </button>
-
-                </div>
-
-
-
-                <p class="post-text">
-
-                    Un día increíble de clases
-                    con mis alumnos. ❤️
-
-                </p>
-
-
-
-                <div class="photo-grid">
-
-
-                    <img
-                        src="https://picsum.photos/400/300?random=10"
-                        alt="foto"
-                    >
-
-
-                    <img
-                        src="https://picsum.photos/400/300?random=11"
-                        alt="foto"
-                    >
-
-
-                    <img
-                        src="https://picsum.photos/400/300?random=12"
-                        alt="foto"
-                    >
-
-
-                </div>
-
-
-
-                <div class="post-stats">
-
-
-                    <span>
-                        👍 ❤️ 243
-                    </span>
-
-
-                    <span>
-                        47 comentarios
-                    </span>
-
-
-                </div>
-
-
-
-                <div class="post-actions">
-
-
-                    <button class="like-button">
-                        👍 Me gusta
-                    </button>
-
-
-                    <button>
-                        💬 Comentar
-                    </button>
-
-
-                    <button>
-                        ↗️ Compartir
-                    </button>
-
-
-                </div>
-
-
-            </article>
-
-
-        </section>
-
-
-
-        <!-- =========================
-             CONTACTOS
-        ========================= -->
-
-        <aside class="right-sidebar">
-
-
-            <h3>
-                Contactos
-            </h3>
-
-
-            <!--
-                AQUI JAVASCRIPT CARGARA
-                AUTOMATICAMENTE LOS USUARIOS
-                REGISTRADOS EN SUPABASE
-            -->
-
-            <div
-                id="listaContactos"
-                class="contacts-list"
+            <input
+                type="password"
+                id="password"
+                placeholder="Contraseña"
+                required
             >
 
-                <p class="loading-contacts">
-                    Cargando contactos...
-                </p>
 
-            </div>
+            <button type="submit">
+                Iniciar sesión
+            </button>
 
-
-        </aside>
+        </form>
 
 
-    </main>
+        <p id="mensaje"></p>
 
 
+        <div class="separador"></div>
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
 
-    <script
-        type="module"
-        src="index.js"
-    ></script>
+        <p>
+            ¿No tienes una cuenta?
+        </p>
 
+        <a href="registro.html">
+            Crear una cuenta
+        </a>
+
+    </div>
+
+
+    <script type="module" src="login.js"></script>
 
 </body>
 
