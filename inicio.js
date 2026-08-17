@@ -876,19 +876,14 @@ async function cargarContactos() {
             `;
 
 
-            contacto.addEventListener(
-            "click",
-            () => {
+            contacto.addEventListener("click", function () {
 
-                console.log(
-                    "Abriendo chat con:",
-                    perfil.nombre
-                );
+            console.log("CLIC EN CONTACTO");
+            console.log("CONTACTO:", perfil);
 
-                abrirChat(perfil);
+            abrirChat(perfil);
 
-            }
-        );
+        });
 
 
             lista.appendChild(
@@ -957,26 +952,32 @@ let contactoActual =
     null;
 
 
-
-/* =========================
-   ABRIR CHAT
-========================= */
 async function abrirChat(contacto) {
 
-    console.log(
-        "ABRIENDO CHAT:",
-        contacto
-    );
+    console.log("ABRIENDO CHAT CON:", contacto.nombre);
+
+    contactoActual = contacto;
+
+    const ventana =
+        document.getElementById("chatWindow");
+
+    const nombre =
+        document.getElementById("chatNombre");
+
+    const avatar =
+        document.getElementById("chatAvatar");
+
+    const mensajes =
+        document.getElementById("chatMensajes");
+
+    const input =
+        document.getElementById("mensajeInput");
 
 
-    contactoActual =
-        contacto;
-
-
-    if (!chatWindow) {
+    if (!ventana) {
 
         console.error(
-            "No existe #chatWindow en el HTML"
+            "ERROR: no existe chatWindow"
         );
 
         return;
@@ -984,56 +985,54 @@ async function abrirChat(contacto) {
     }
 
 
-    chatWindow.classList.add(
-        "activo"
+    console.log(
+        "VENTANA ENCONTRADA"
     );
+
+
+    ventana.classList.add("activo");
 
 
     console.log(
-        "Clase actual:",
-        chatWindow.className
+        "CLASES DE LA VENTANA:",
+        ventana.className
     );
 
 
-    if (chatNombre) {
+    if (nombre) {
 
-        chatNombre.textContent =
+        nombre.textContent =
             contacto.nombre;
 
     }
 
 
-    if (chatAvatar) {
+    if (avatar) {
 
-        if (
-            contacto.foto &&
-            contacto.foto.trim() !== ""
-        ) {
-
-            chatAvatar.innerHTML = `
-                <img
-                    src="${contacto.foto}"
-                    alt="${contacto.nombre}"
-                >
-            `;
-
-        } else {
-
-            chatAvatar.textContent =
-                contacto.nombre
-                    .charAt(0)
-                    .toUpperCase();
-
-        }
+        avatar.textContent =
+            contacto.nombre
+                .charAt(0)
+                .toUpperCase();
 
     }
 
 
-    if (mensajeInput) {
+    if (input) {
 
-        mensajeInput.value = "";
+        input.value = "";
 
-        mensajeInput.focus();
+        input.focus();
+
+    }
+
+
+    if (mensajes) {
+
+        mensajes.innerHTML = `
+            <p class="chat-vacio">
+                Cargando mensajes...
+            </p>
+        `;
 
     }
 
@@ -1041,7 +1040,6 @@ async function abrirChat(contacto) {
     await cargarMensajes();
 
 }
-
 
 
 /* =========================
