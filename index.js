@@ -667,7 +667,7 @@ if (cerrarSesion) {
 
 
             window.location.replace(
-                "index.html"
+                "inicio.html"
             );
 
         }
